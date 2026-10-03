@@ -1,21 +1,52 @@
 import type { MetadataRoute } from "next";
+import { caseStudiesDetailed } from "@/lib/case-studies";
 import { siteConfig } from "@/lib/site";
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  return [
+  const languages = {
+    en: siteConfig.url,
+    ar: siteConfig.url + "/ar",
+  };
+
+  const home: MetadataRoute.Sitemap = [
     {
       url: siteConfig.url,
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 1,
-      alternates: { languages: { en: siteConfig.url, ar: siteConfig.url + "/ar" } },
+      alternates: { languages },
     },
     {
       url: siteConfig.url + "/ar",
       lastModified: new Date(),
       changeFrequency: "monthly",
       priority: 0.9,
-      alternates: { languages: { en: siteConfig.url, ar: siteConfig.url + "/ar" } },
+      alternates: { languages },
     },
   ];
+
+  const cases: MetadataRoute.Sitemap = caseStudiesDetailed.flatMap((study) => {
+    const caseLanguages = {
+      en: siteConfig.url + "/work/" + study.slug,
+      ar: siteConfig.url + "/ar/work/" + study.slug,
+    };
+    return [
+      {
+        url: caseLanguages.en,
+        lastModified: new Date(),
+        changeFrequency: "yearly" as const,
+        priority: 0.8,
+        alternates: { languages: caseLanguages },
+      },
+      {
+        url: caseLanguages.ar,
+        lastModified: new Date(),
+        changeFrequency: "yearly" as const,
+        priority: 0.7,
+        alternates: { languages: caseLanguages },
+      },
+    ];
+  });
+
+  return [...home, ...cases];
 }
