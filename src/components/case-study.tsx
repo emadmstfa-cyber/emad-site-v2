@@ -61,7 +61,7 @@ export function CaseStudyPage({ dict, study, related }: { dict: Dict; study: Cas
   };
 
   return (
-    <>
+    <main id="main-content">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumb) }} />
 
@@ -233,6 +233,6 @@ export function CaseStudyPage({ dict, study, related }: { dict: Dict; study: Cas
           </div>
         </section>
       ) : null}
-    </>
+    </main>
   );
 }

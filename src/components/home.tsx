@@ -25,7 +25,7 @@ export function HomePage({ lang }: { lang: Lang }) {
   return (
     <>
       <SiteHeader dict={dict} name={name} />
-      <main id="main" className="flex-1">
+      <main id="main-content" className="flex-1">
         <Hero dict={dict} name={name} legalName={legalName} handle={siteConfig.handle} socials={socials} />
         <Expertise dict={dict} />
         <FeaturedWork dict={dict} studies={caseStudiesDetailed} />
