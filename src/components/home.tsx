@@ -24,7 +24,7 @@ export function HomePage({ lang }: { lang: Lang }) {
 
   return (
     <>
-      <SiteHeader dict={dict} name={name} />
+      <SiteHeader dict={dict} name={legalName} />
       <main id="main-content" className="flex-1">
         <Hero dict={dict} name={name} legalName={legalName} handle={siteConfig.handle} socials={socials} />
         <Expertise dict={dict} />
@@ -35,7 +35,7 @@ export function HomePage({ lang }: { lang: Lang }) {
         <About dict={dict} clients={localized} />
         <Contact dict={dict} linkedin={siteConfig.social.linkedin} />
       </main>
-      <SiteFooter dict={dict} name={name} legalName={legalName} socials={socials} />
+      <SiteFooter dict={dict} name={legalName} legalName={legalName} socials={socials} />
       <WhatsAppFloat number={siteConfig.whatsapp.number} message={dict.whatsapp.message} label={dict.whatsapp.floatLabel} />
     </>
   );
