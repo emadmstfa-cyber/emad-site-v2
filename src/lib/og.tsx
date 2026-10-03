@@ -1,11 +1,11 @@
+/* eslint-disable @next/next/no-img-element */
 import { readFile } from "node:fs/promises";
 import path from "node:path";
 import { ImageResponse } from "next/og";
 import { siteConfig } from "@/lib/site";
 
-export const alt = siteConfig.title;
-export const size = { width: 1200, height: 630 };
-export const contentType = "image/png";
+export const ogSize = { width: 1200, height: 630 };
+export const ogContentType = "image/png";
 
 async function portraitDataUri(): Promise<string | null> {
   try {
@@ -16,7 +16,7 @@ async function portraitDataUri(): Promise<string | null> {
   }
 }
 
-export default async function OpengraphImage() {
+export async function renderOgImage() {
   const portrait = await portraitDataUri();
   return new ImageResponse(
     (
@@ -26,7 +26,7 @@ export default async function OpengraphImage() {
           height: "100%",
           display: "flex",
           background: "linear-gradient(135deg, #0b0907 0%, #14110f 55%, #2a2113 100%)",
-          color: "#f8fafc",
+          color: "#f5f1ea",
           fontFamily: "sans-serif",
         }}
       >
@@ -54,10 +54,12 @@ export default async function OpengraphImage() {
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 62, fontWeight: 700, lineHeight: 1.05 }}>{siteConfig.name}</div>
-            <div style={{ marginTop: 16, fontSize: 30, color: "#eebb58" }}>
+            <div style={{ marginTop: 16, fontSize: 28, color: "#eebb58" }}>
               Digital Growth · AI Automation · MarTech
             </div>
-            <div style={{ marginTop: 22, fontSize: 24, color: "#a89f92" }}>{siteConfig.legalName}</div>
+            <div style={{ marginTop: 22, fontSize: 24, color: "#a89f92" }}>
+              Digital Growth Consultant · AI Automation Specialist
+            </div>
           </div>
           <div style={{ fontSize: 24, color: "#a89f92" }}>emadmstfa.com</div>
         </div>
@@ -68,6 +70,6 @@ export default async function OpengraphImage() {
         ) : null}
       </div>
     ),
-    { ...size }
+    { ...ogSize }
   );
 }

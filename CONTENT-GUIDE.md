@@ -98,3 +98,21 @@ git push origin website-v2
 npm run build     # البناء
 npm run lint      # فحص الكود
 ```
+
+---
+
+## 7) النسخة العربية (AR / EN)
+
+**نصوص الواجهة:** `src/lib/i18n.ts` — فيه قاموسان: `en` و `ar`.
+كل نص ظاهر على الموقع موجود في مكان واحد. لتعديل أي عبارة عربية، عدّل الحقل المقابل في `ar`.
+
+**نصوص العملاء بالعربية:** داخل `src/lib/clients.ts` — في الحقل `ar` لكل عميل
+(نفس حقول النسخة الإنجليزية: client · category · challenge · strategy · execution · outcome · metrics).
+
+**المسارات:**
+- `/` → الإنجليزية (LTR)
+- `/ar` → العربية (RTL)
+
+**الخطوط:** Inter للإنجليزية · **Tajawal** للعربية (في `src/app/(en)/layout.tsx` و `src/app/(ar)/layout.tsx`).
+
+**زر تبديل اللغة:** في الهيدر — `dict.switchLabel` / `dict.switchHref`.

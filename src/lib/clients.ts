@@ -8,33 +8,56 @@
  *
  * ------------------------------------------------------------
  *  قالب جاهز — انسخه والصقه داخل المصفوفة:
- *  Copy-paste template (add inside the array):
  * ------------------------------------------------------------
  *  {
  *    slug: "client-slug",                 // معرّف فريد، إنجليزي بدون مسافات
- *    client: "اسم العميل",                 // الاسم الظاهر على الموقع
- *    category: "القطاع · نوع العمل",        // مثال: "Healthcare · Performance Marketing"
- *    challenge: "التحدي بكلمة أو سطر",
- *    strategy: "الاستراتيجية",
- *    execution: "ما نُفّذ فعليًا",
- *    outcome: "النتيجة النهائية",
- *    channels: ["Meta", "Google"],        // القنوات المستخدمة
- *    highlight: "+45% sales in 3 months", // شارة اختيارية — احذف السطر إن لم توجد
- *    metrics: [                           // حتى 4 مؤشرات — الأرقام الفعلية فقط
+ *    client: "اسم العميل (إنجليزي)",
+ *    category: "Sector · Type",
+ *    challenge: "...",
+ *    strategy: "...",
+ *    execution: "...",
+ *    outcome: "...",
+ *    channels: ["Meta", "Google"],
+ *    highlight: "+45% sales in 3 months", // شارة اختيارية
+ *    metrics: [                           // حتى 4 مؤشرات — أرقام موثّقة فقط
  *      { value: "+45%", label: "Sales growth" },
- *      { value: "3 mo", label: "Time to result" },
  *    ],
+ *    ar: {                                // النسخة العربية (نفس الحقول)
+ *      client: "اسم العميل",
+ *      category: "القطاع · النوع",
+ *      challenge: "...",
+ *      strategy: "...",
+ *      execution: "...",
+ *      outcome: "...",
+ *      highlight: "+45% مبيعات في 3 أشهر",
+ *      metrics: [
+ *        { value: "+45%", label: "نمو المبيعات" },
+ *      ],
+ *    },
  *  },
  *
  *  قواعد مهمة:
  *  1) كل رقم هنا يجب أن يكون موثّقًا من تقرير أو ملف رسمي — لا تقديرات.
  *  2) metrics اختيارية: احذف الحقل كاملًا لعميل بلا أرقام.
- *  3) الترتيب في المصفوفة = ترتيب الظهور على الموقع.
- *  4) لا تنسَ الفاصلة (,) بعد كل كائن.
+ *  3) ar اختيارية: إن حذفتها سيظهر النص الإنجليزي في النسخة العربية.
+ *  4) الترتيب في المصفوفة = ترتيب الظهور على الموقع.
+ *  5) لا تنسَ الفاصلة (,) بعد كل كائن.
  * ============================================================
  */
 
 export type ClientMetric = { value: string; label: string };
+
+export type ClientAr = {
+  client?: string;
+  category?: string;
+  challenge?: string;
+  strategy?: string;
+  execution?: string;
+  outcome?: string;
+  highlight?: string;
+  channels?: string[];
+  metrics?: ClientMetric[];
+};
 
 export type Client = {
   slug: string;
@@ -46,7 +69,8 @@ export type Client = {
   outcome: string;
   channels: string[];
   highlight?: string;
-  metrics?: { value: string; label: string }[];
+  metrics?: ClientMetric[];
+  ar?: ClientAr;
 };
 
 export const clients: Client[] = [
@@ -64,6 +88,19 @@ export const clients: Client[] = [
       { value: "+35%", label: "Bookings" },
       { value: "+30%", label: "Profits" },
     ],
+    ar: {
+      client: "مركز Consultants Eye للعيون",
+      category: "الرعاية الصحية · التسويق بالأداء",
+      challenge: "تحسين الحجوزات المؤهلة وكفاءة التسويق.",
+      strategy: "هيكلة الأداء مع تحسين التحويل وتنقيح الجمهور.",
+      execution: "إعادة هيكلة الإعلانات المدفوعة، إصلاح مسار التحويل، تحسين المحتوى الإبداعي، وتقوية القياس.",
+      outcome: "نمو قابل للقياس في الحجوزات والربحية.",
+      highlight: "+35% حجوزات · +30% أرباح",
+      metrics: [
+        { value: "+35%", label: "الحجوزات" },
+        { value: "+30%", label: "الأرباح" },
+      ],
+    },
   },
   {
     slug: "saed-recruitment",
@@ -79,6 +116,19 @@ export const clients: Client[] = [
       { value: "+45%", label: "Sales growth" },
       { value: "3 mo", label: "Time to result" },
     ],
+    ar: {
+      client: "سعيد للتوظيف",
+      category: "الخدمات · النمو",
+      challenge: "تسريع المبيعات من القنوات الرقمية خلال مدة قصيرة.",
+      strategy: "نظام نمو يركّز على جودة العملاء المحتملين ومعدّل الإغلاق.",
+      execution: "هندسة الحملات ودورة حياة العميل والأتمتة عبر نظام إدارة العملاء.",
+      outcome: "تحقّق خلال ثلاثة أشهر من الإطلاق.",
+      highlight: "+45% مبيعات في 3 أشهر",
+      metrics: [
+        { value: "+45%", label: "نمو المبيعات" },
+        { value: "3 أشهر", label: "زمن النتيجة" },
+      ],
+    },
   },
   {
     slug: "mep-expo",
@@ -95,6 +145,20 @@ export const clients: Client[] = [
       { value: "497,221", label: "Link clicks" },
       { value: "SAR 175", label: "Cost / sign-up" },
     ],
+    ar: {
+      client: "معرض الشرق الأوسط للدواجن (MEP Expo)",
+      category: "المعارض · جذب الزوار",
+      challenge: "جذب زوار مؤهّلين على نطاق واسع.",
+      strategy: "اكتساب بالأداء مدعوم بالمحتوى وإعادة الاستهداف.",
+      execution: "حملات اكتساب متعددة القنوات ونظام محتوى إبداعي وتتبّع التحويلات.",
+      outcome: "اكتساب متعدد القنوات وفق بيانات الحملات المؤكدة لسبتمبر 2026.",
+      metrics: [
+        { value: "78,286 ر.س", label: "الإنفاق الإعلاني" },
+        { value: "44.1 مليون", label: "الظهور" },
+        { value: "497,221", label: "نقرات الرابط" },
+        { value: "175 ر.س", label: "تكلفة التسجيل" },
+      ],
+    },
   },
   {
     slug: "code-it",
@@ -112,6 +176,21 @@ export const clients: Client[] = [
       { value: "11,664", label: "Clicks" },
       { value: "285", label: "Leads" },
     ],
+    ar: {
+      client: "كود إت (CODE IT)",
+      category: "تقنية B2B · توليد العملاء",
+      challenge: "توليد مسار عملاء مؤهّل لحلول نقاط البيع والمحاسبة في ثلاثة قطاعات.",
+      strategy: "محرك أداء متعدد المنصات مع أتمتة إدارة العملاء وتقوية جودة الليدز.",
+      execution: "حملات Snapchat وMeta وGoogle وTikTok مربوطة بـMiniCRM وSAVOXX عبر 18 مسار Zapier.",
+      outcome: "أداء مؤكد لسبتمبر 2026 عبر أربع منصات.",
+      highlight: "285 ليدًا · 155.91 ر.س/ليد",
+      metrics: [
+        { value: "44,435 ر.س", label: "الإنفاق" },
+        { value: "4.28 مليون", label: "الظهور" },
+        { value: "11,664", label: "النقرات" },
+        { value: "285", label: "الليدز" },
+      ],
+    },
   },
   {
     slug: "marketpilot",
@@ -122,6 +201,14 @@ export const clients: Client[] = [
     execution: "Monitoring, source analysis, AI-assisted analysis, reporting and decision support.",
     outcome: "Founder-built platform for AI-powered monitoring, analysis and decision support.",
     channels: ["Next.js", "Supabase", "OpenAI", "Automation"],
+    ar: {
+      client: "MarketPilot",
+      category: "منتج · منصة ذكاء اصطناعي",
+      challenge: "تحويل الرصد والبيانات والذكاء الاصطناعي إلى مخرجات جاهزة للقرار.",
+      strategy: "منصة ومسارات عمل للرصد والتحليل والإنذار المبكر.",
+      execution: "الرصد وتحليل المصادر والتحليل بمساعدة الذكاء الاصطناعي والتقارير ودعم القرار.",
+      outcome: "منصة بناها المؤسِّس للرصد والتحليل ودعم القرار بالذكاء الاصطناعي.",
+    },
   },
   {
     slug: "almabani-mostadam",
@@ -132,6 +219,14 @@ export const clients: Client[] = [
     execution: "Campaign planning, creative and channel activation.",
     outcome: "Digital campaign and targeted communication delivered.",
     channels: ["Meta", "Google"],
+    ar: {
+      client: "المباني / مستدام",
+      category: "العقار · الاتصال",
+      challenge: "دعم أهداف الاتصال المرتبطة بمستدام.",
+      strategy: "حملة رقمية مع تواصل موجّه.",
+      execution: "تخطيط الحملة والمحتوى الإبداعي وتفعيل القنوات.",
+      outcome: "تسليم حملة رقمية وتواصل موجّه.",
+    },
   },
   {
     slug: "deem-real-estate",
@@ -142,9 +237,16 @@ export const clients: Client[] = [
     execution: "Paid media execution and measurement.",
     outcome: "Performance marketing framework delivered across paid channels.",
     channels: ["Meta", "Google", "Snapchat"],
+    ar: {
+      client: "ديم العقارية",
+      category: "العقار · الحملات",
+      challenge: "تقوية الطلب وأداء الحملات.",
+      strategy: "تسويق بالأداء مع تحسين المسار والمحتوى الإبداعي.",
+      execution: "تنفيذ الإعلانات المدفوعة والقياس.",
+      outcome: "تسليم إطار تسويق بالأداء عبر القنوات المدفوعة.",
+    },
   },
 ];
-
 
 /** أسماء متوافقة مع الاستدعاءات القديمة | Backward-compatible aliases */
 export type CaseStudy = Client;
