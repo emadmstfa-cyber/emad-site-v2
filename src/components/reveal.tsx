@@ -65,5 +65,10 @@ export function CountUp({ to, suffix = "", className = "" }: { to: number; suffi
     return () => cancelAnimationFrame(frame);
   }, [to, reduce]);
 
-  return <span className={className}>{reduce ? to : value}{suffix}</span>;
+  return (
+    <span className={className}>
+      <span className="counter-static">{to}{suffix}</span>
+      <span className="counter-anim">{reduce ? to : value}{suffix}</span>
+    </span>
+  );
 }

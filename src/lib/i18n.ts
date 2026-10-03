@@ -18,6 +18,7 @@ export type Dict = {
   hero: {
     chip: string;
     subtitle: string;
+    lead: string;
     focus: string;
     rotating: string[];
     work: string;
@@ -60,6 +61,7 @@ export const dicts: Record<Lang, Dict> = {
     hero: {
       chip: "Digital Growth · AI Automation · MarTech",
       subtitle: "Growth, automation and decision systems.",
+      lead: "I help organisations turn marketing, data and AI into growth, automation and decision systems that measurably move the business.",
       focus: "Focus",
       rotating: ["Digital Growth", "AI Automation", "MarTech & CRM", "Strategic Monitoring", "Early Warning", "Decision Support"],
       work: "View selected work",
@@ -68,7 +70,7 @@ export const dicts: Record<Lang, Dict> = {
       companyLabel: "Company",
       founderLabel: "Founder",
       focusLabel: "Focus",
-      roleValue: "Director of Digital Marketing & Media Monitoring",
+      roleValue: "Managing Director — WE Marketing",
       companyValue: "WE Marketing",
       founderValue: "MarketPilot",
       focusValue: "Growth · AI · Data",
@@ -77,7 +79,7 @@ export const dicts: Record<Lang, Dict> = {
       { value: 12, suffix: "+", label: "Years Experience", sublabel: "Digital, growth and technology" },
       { value: 80, suffix: "+", label: "Campaigns", sublabel: "Across paid media and growth" },
       { value: 10, suffix: "+", label: "Sectors", sublabel: "Diversified industry exposure" },
-      { value: null, label: "Director of Digital Marketing & Media Monitoring", sublabel: "WE Marketing" },
+      { value: null, label: "Managing Director", sublabel: "WE Marketing" },
       { value: null, label: "Founder", sublabel: "MarketPilot" },
     ],
     expertise: {
@@ -93,7 +95,7 @@ export const dicts: Record<Lang, Dict> = {
     },
     work: {
       eyebrow: "Selected work",
-      title: "Engagements where structure created measurable movement.",
+      title: "Selected work with measurable business impact.",
       lead: "A selection of growth, performance and product engagements across healthcare, services, real estate, events and technology.",
       challenge: "Challenge",
       approach: "Approach",
@@ -121,12 +123,12 @@ export const dicts: Record<Lang, Dict> = {
     about: {
       eyebrow: "About",
       title: "Twelve years turning marketing, data and AI into systems.",
-      lead: "From performance marketing to growth systems, automation, MarTech and decision intelligence, building the operating layer behind measurable outcomes.",
+      lead: "From performance marketing to growth systems, automation, MarTech and decision support, building the operating layer behind measurable outcomes.",
       clientsLabel: "Selected clients",
       experience: [
-        { role: "Director of Digital Marketing & Media Monitoring", org: "WE Marketing", period: "Current", detail: "Leading growth, performance and digital transformation engagements across sectors in KSA and the region." },
+        { role: "Managing Director", org: "WE Marketing", period: "Current", detail: "Leading growth, performance and digital transformation engagements across sectors in KSA and the region." },
         { role: "Founder", org: "MarketPilot", period: "Building", detail: "AI-powered monitoring, analysis, early warning and decision support platform." },
-        { role: "Digital Marketing, Growth & Technology", org: "12+ years", period: "2013 — Present", detail: "From performance marketing to growth systems, automation, MarTech and decision intelligence." },
+        { role: "Digital Marketing, Growth & Technology", org: "12+ years", period: "2013 — Present", detail: "From performance marketing to growth systems, automation, MarTech and decision support." },
       ],
       certifications: [
         { title: "Corporate Strategy", issuer: "University of London" },
@@ -161,6 +163,7 @@ export const dicts: Record<Lang, Dict> = {
     hero: {
       chip: "النمو الرقمي · أتمتة الذكاء الاصطناعي · تقنيات التسويق",
       subtitle: "أنظمة النمو والأتمتة ودعم القرار.",
+      lead: "أساعد المؤسسات على تحويل التسويق والبيانات والذكاء الاصطناعي إلى أنظمة نمو وأتمتة ودعم قرار تصنع فرقًا قابلًا للقياس.",
       focus: "التخصص",
       rotating: ["النمو الرقمي", "الأتمتة بالذكاء الاصطناعي", "تقنيات التسويق وCRM", "الرصد الاستراتيجي", "الإنذار المبكر", "دعم القرار"],
       work: "استعرض أعمالًا مختارة",
@@ -169,7 +172,7 @@ export const dicts: Record<Lang, Dict> = {
       companyLabel: "الشركة",
       founderLabel: "المؤسِّس",
       focusLabel: "التخصص",
-      roleValue: "مدير إدارة التسويق الرقمي والرصد الإعلامي",
+      roleValue: "المدير العام — وي ماركتينج",
       companyValue: "وي ماركتينج",
       founderValue: "MarketPilot",
       focusValue: "النمو · الذكاء الاصطناعي · البيانات",
@@ -178,7 +181,7 @@ export const dicts: Record<Lang, Dict> = {
       { value: 12, suffix: "+", label: "سنة خبرة", sublabel: "رقمي ونمو وتقنية" },
       { value: 80, suffix: "+", label: "حملة", sublabel: "عبر الإعلانات المدفوعة والنمو" },
       { value: 10, suffix: "+", label: "قطاعًا", sublabel: "تنوّع في القطاعات" },
-      { value: null, label: "مدير إدارة التسويق الرقمي والرصد الإعلامي", sublabel: "وي ماركتينج" },
+      { value: null, label: "المدير العام", sublabel: "وي ماركتينج" },
       { value: null, label: "المؤسِّس", sublabel: "MarketPilot" },
     ],
     expertise: {
@@ -194,7 +197,7 @@ export const dicts: Record<Lang, Dict> = {
     },
     work: {
       eyebrow: "أعمال مختارة",
-      title: "مشاريع صنع فيها التنظيم حركة قابلة للقياس.",
+      title: "أعمال مختارة بأثر ملموس على الأعمال.",
       lead: "مختارات من مشاريع النمو والأداء والمنتجات في الصحة والخدمات والعقار والمعارض والتقنية.",
       challenge: "التحدي",
       approach: "الاستراتيجية",
@@ -225,9 +228,9 @@ export const dicts: Record<Lang, Dict> = {
       lead: "من التسويق بالأداء إلى أنظمة النمو والأتمتة وتقنيات التسويق وذكاء القرار — أبني الطبقة التشغيلية خلف النتائج القابلة للقياس.",
       clientsLabel: "عملاء مختارون",
       experience: [
-        { role: "مدير إدارة التسويق الرقمي والرصد الإعلامي", org: "وي ماركتينج", period: "حاليًا", detail: "قيادة مشاريع النمو والأداء والتحول الرقمي عبر قطاعات متعددة في السعودية والمنطقة." },
+        { role: "المدير العام", org: "وي ماركتينج", period: "حاليًا", detail: "قيادة مشاريع النمو والأداء والتحول الرقمي عبر قطاعات متعددة في السعودية والمنطقة." },
         { role: "المؤسِّس", org: "MarketPilot", period: "قيد البناء", detail: "منصة مدعومة بالذكاء الاصطناعي للرصد والتحليل والإنذار المبكر ودعم القرار." },
-        { role: "التسويق الرقمي والنمو والتقنية", org: "أكثر من 12 عامًا", period: "2013 — الآن", detail: "من التسويق بالأداء إلى أنظمة النمو والأتمتة وتقنيات التسويق وذكاء القرار." },
+        { role: "التسويق الرقمي والنمو والتقنية", org: "أكثر من 12 عامًا", period: "2013 — الآن", detail: "من التسويق بالأداء إلى أنظمة النمو والأتمتة وتقنيات التسويق ودعم القرار." },
       ],
       certifications: [
         { title: "الاستراتيجية المؤسسية", issuer: "University of London" },

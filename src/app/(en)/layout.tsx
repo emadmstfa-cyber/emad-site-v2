@@ -77,6 +77,7 @@ export default function EnLayout({ children }: { children: ReactNode }) {
   return (
     <html lang="en" dir="ltr" className={fontVars + " h-full antialiased"}>
       <body className="min-h-full flex flex-col bg-ink text-cream">
+        <script dangerouslySetInnerHTML={{ __html: "document.documentElement.classList.add('js')" }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
         <a href="#main" className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-ink">

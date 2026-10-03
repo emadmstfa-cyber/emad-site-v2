@@ -126,6 +126,28 @@ html[dir="rtl"] .chip { letter-spacing: 0; text-transform: none; }
   box-shadow: inset 0 1px 0 rgba(255,255,255,.35);
 }
 
+/* Premium motion primitives (subtle, no neon) */
+.card-lift { transition: transform .3s cubic-bezier(.22,1,.36,1), border-color .3s ease, box-shadow .3s ease; }
+.card-lift:hover { transform: translateY(-4px); border-color: var(--border-strong); box-shadow: 0 30px 80px -50px rgba(238,187,88,.6); }
+
+.glow-gold {
+  position: absolute; inset: -14% -10% auto auto;
+  height: 70%; width: 70%;
+  background: radial-gradient(closest-side, rgba(238,187,88,.20), transparent 72%);
+  filter: blur(28px); pointer-events: none;
+}
+
+.panel-row { display: flex; align-items: center; gap: .75rem; padding: .95rem 1.25rem; font-size: .875rem; color: #f5f1ea; border-top: 1px solid rgba(245,241,234,.06); }
+.panel-row:first-child { border-top: 0; }
+.panel-row .pip { width: .375rem; height: .375rem; border-radius: 999px; background: var(--accent); flex: none; }
+
+/* Animated counters: final value is always in the HTML.
+   Without JS the static value shows; with JS the animated one takes over. */
+.counter-static { display: inline; }
+.counter-anim { display: none; }
+html.js .counter-static { display: none; }
+html.js .counter-anim { display: inline; }
+
 :focus-visible { outline: 2px solid rgba(238,187,88,.85); outline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {

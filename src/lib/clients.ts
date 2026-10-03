@@ -139,11 +139,12 @@ export const clients: Client[] = [
     execution: "Multi-channel paid acquisition, creative system and conversion tracking.",
     outcome: "Multi-channel acquisition delivered against confirmed September 2026 campaign data.",
     channels: ["Meta", "X"],
+    highlight: "20,000 registration goal · SAR 0.22 overall CPR",
     metrics: [
       { value: "SAR 78,286", label: "Ad investment" },
       { value: "44.1M", label: "Impressions" },
       { value: "497,221", label: "Link clicks" },
-      { value: "SAR 175", label: "Cost / sign-up" },
+      { value: "SAR 0.22", label: "Overall CPR" },
     ],
     ar: {
       client: "معرض الشرق الأوسط للدواجن (MEP Expo)",
@@ -152,11 +153,12 @@ export const clients: Client[] = [
       strategy: "اكتساب بالأداء مدعوم بالمحتوى وإعادة الاستهداف.",
       execution: "حملات اكتساب متعددة القنوات ونظام محتوى إبداعي وتتبّع التحويلات.",
       outcome: "اكتساب متعدد القنوات وفق بيانات الحملات المؤكدة لسبتمبر 2026.",
+      highlight: "هدف 20,000 تسجيل · تكلفة التسجيل 0.22 ر.س",
       metrics: [
         { value: "78,286 ر.س", label: "الإنفاق الإعلاني" },
         { value: "44.1 مليون", label: "الظهور" },
         { value: "497,221", label: "نقرات الرابط" },
-        { value: "175 ر.س", label: "تكلفة التسجيل" },
+        { value: "0.22 ر.س", label: "تكلفة التسجيل (إجمالي)" },
       ],
     },
   },

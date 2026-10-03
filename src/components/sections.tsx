@@ -2,6 +2,13 @@ import { Reveal } from "@/components/reveal";
 import type { Client } from "@/lib/clients";
 import type { Dict } from "@/lib/i18n";
 
+function initials(name: string): string {
+  const words = name.replace(/[()·\-—]/g, " ").split(/\s+/).filter(Boolean);
+  const skip = ["the", "and", "of"];
+  const picked = words.filter((w) => !skip.includes(w.toLowerCase())).slice(0, 2);
+  return picked.map((w) => w[0]).join("").toUpperCase() || "EM";
+}
+
 function SectionHeading({ eyebrow, title, lead }: { eyebrow: string; title: string; lead?: string }) {
   return (
     <div className="max-w-3xl">
@@ -28,14 +35,14 @@ export function Expertise({ dict }: { dict: Dict }) {
         <div className="mt-12 grid gap-5 md:grid-cols-2">
           {dict.expertise.areas.map((area, index) => (
             <Reveal key={area.id} delay={index * 0.05}>
-              <article className="card h-full p-6 md:p-7">
+              <article className="card card-lift h-full p-6 md:p-7">
                 <div className="flex items-baseline justify-between gap-4">
                   <h3 className="text-lg font-semibold text-cream">{area.title}</h3>
                   <span className="font-mono text-xs text-muted/60">{area.id}</span>
                 </div>
                 <ul className="mt-5 flex flex-wrap gap-2">
                   {area.items.map((item) => (
-                    <li key={item} className="rounded-full border border-cream/10 bg-cream/5 px-3 py-1.5 text-xs text-cream/85">{item}</li>
+                    <li key={item} className="rounded-full border border-cream/10 bg-cream/5 px-3 py-1.5 text-xs text-cream/85 transition-colors hover:border-gold/30 hover:text-gold">{item}</li>
                   ))}
                 </ul>
               </article>
@@ -55,17 +62,22 @@ export function Work({ dict, clients }: { dict: Dict; clients: Client[] }) {
         <div className="mt-12 grid gap-5 lg:grid-cols-2">
           {clients.map((study, index) => (
             <Reveal key={study.slug} delay={(index % 2) * 0.06}>
-              <article className="card h-full p-6 md:p-7">
-                <div className="flex flex-wrap items-start justify-between gap-3">
-                  <div>
+              <article className="card card-lift flex h-full flex-col p-6 md:p-7">
+                <div className="flex items-center gap-4">
+                  <span className="monogram h-12 w-12 shrink-0 rounded-xl text-sm">{initials(study.client)}</span>
+                  <div className="min-w-0">
                     <h3 className="text-lg font-semibold text-cream">{study.client}</h3>
                     <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted/75">{study.category}</p>
                   </div>
-                  {study.highlight ? (
-                    <span className="rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-xs font-semibold text-gold">{study.highlight}</span>
-                  ) : null}
                 </div>
-                <dl className="mt-6 space-y-4 text-sm">
+
+                {study.highlight ? (
+                  <p className="mt-5 inline-flex w-fit rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-xs font-semibold text-gold">
+                    {study.highlight}
+                  </p>
+                ) : null}
+
+                <dl className="mt-5 space-y-4 text-sm">
                   <div>
                     <dt className="text-muted/75">{dict.work.challenge}</dt>
                     <dd className="mt-1 text-cream/85">{study.challenge}</dd>
@@ -79,6 +91,7 @@ export function Work({ dict, clients }: { dict: Dict; clients: Client[] }) {
                     <dd className="mt-1 text-cream/85">{study.outcome}</dd>
                   </div>
                 </dl>
+
                 {study.metrics && study.metrics.length > 0 ? (
                   <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
                     {study.metrics.map((m) => (
@@ -89,9 +102,10 @@ export function Work({ dict, clients }: { dict: Dict; clients: Client[] }) {
                     ))}
                   </div>
                 ) : null}
-                <div className="mt-6 flex flex-wrap gap-2">
+
+                <div className="mt-auto flex flex-wrap gap-2 pt-6">
                   {study.channels.map((channel) => (
-                    <span key={channel} className="rounded-full border border-cream/10 px-3 py-1 text-[11px] uppercase tracking-wider text-muted">{channel}</span>
+                    <span key={channel} className="rounded-full border border-cream/10 px-3 py-1 text-[11px] uppercase tracking-wider text-muted transition-colors hover:border-gold/30 hover:text-gold">{channel}</span>
                   ))}
                 </div>
               </article>
@@ -108,7 +122,7 @@ export function MarketPilot({ dict }: { dict: Dict }) {
     <section id="marketpilot" className="border-b border-cream/5 py-20 md:py-28">
       <div className="shell">
         <div className="card overflow-hidden p-7 md:p-12">
-          <div className="grid gap-10 lg:grid-cols-[1fr_0.9fr] lg:items-center">
+          <div className="grid gap-10 lg:grid-cols-[1fr_0.95fr] lg:items-center">
             <div>
               <Reveal>
                 <span className="chip"><span className="dot" /> {dict.marketpilot.chip}</span>
@@ -126,13 +140,25 @@ export function MarketPilot({ dict }: { dict: Dict }) {
                 </div>
               </Reveal>
             </div>
-            <div className="grid grid-cols-2 gap-3">
-              {dict.marketpilot.points.map((point, index) => (
-                <Reveal key={point} delay={0.05 * index}>
-                  <div className="rounded-2xl border border-cream/10 bg-cream/[0.03] px-4 py-3 text-sm text-cream/85">{point}</div>
-                </Reveal>
-              ))}
-            </div>
+
+            <Reveal delay={0.15}>
+              <div className="overflow-hidden rounded-2xl border border-cream/12 bg-ink-2/70">
+                <div className="flex items-center gap-2 border-b border-cream/10 bg-cream/[0.03] px-4 py-3">
+                  <span className="h-2.5 w-2.5 rounded-full bg-gold/75" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-cream/15" />
+                  <span className="h-2.5 w-2.5 rounded-full bg-cream/15" />
+                  <span className="ms-3 rounded-md bg-ink/60 px-3 py-1 text-[11px] tracking-wide text-muted">MarketPilot — Capabilities</span>
+                </div>
+                <div>
+                  {dict.marketpilot.points.map((point) => (
+                    <div key={point} className="panel-row">
+                      <span className="pip" />
+                      <span>{point}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            </Reveal>
           </div>
         </div>
       </div>
@@ -148,11 +174,11 @@ export function Stack({ dict }: { dict: Dict }) {
         <div className="mt-12 grid gap-5 sm:grid-cols-2 lg:grid-cols-5">
           {dict.stack.groups.map((group, index) => (
             <Reveal key={group.title} delay={index * 0.04}>
-              <div className="card h-full p-5">
+              <div className="card card-lift h-full p-5">
                 <p className="text-xs uppercase tracking-[0.18em] text-gold">{group.title}</p>
                 <ul className="mt-4 space-y-2 text-sm text-cream/85">
                   {group.items.map((item) => (
-                    <li key={item}>{item}</li>
+                    <li key={item} className="transition-colors hover:text-gold">{item}</li>
                   ))}
                 </ul>
               </div>
@@ -183,7 +209,7 @@ export function About({ dict, clients }: { dict: Dict; clients: Client[] }) {
         <div className="space-y-5">
           {dict.about.experience.map((item, index) => (
             <Reveal key={item.role} delay={index * 0.06}>
-              <article className="card p-6">
+              <article className="card card-lift p-6">
                 <div className="flex flex-wrap items-baseline justify-between gap-2">
                   <h3 className="text-base font-semibold text-cream">{item.role}</h3>
                   <span className="text-xs uppercase tracking-[0.16em] text-muted/75">{item.period}</span>
@@ -216,6 +242,7 @@ export function Contact({ dict, linkedin }: { dict: Dict; linkedin: string }) {
     <section id="contact" className="py-20 md:py-28">
       <div className="shell">
         <div className="card relative overflow-hidden p-8 md:p-14">
+          <span className="glow-gold" />
           <Reveal>
             <span className="chip"><span className="dot" /> {dict.contact.eyebrow}</span>
           </Reveal>

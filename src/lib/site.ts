@@ -143,7 +143,7 @@ export const experience = [
     role: "Digital Marketing, Growth & Technology",
     org: "12+ years",
     period: "2013 — Present",
-    detail: "From performance marketing to growth systems, automation, MarTech and decision intelligence.",
+    detail: "From performance marketing to growth systems, automation, MarTech and decision support.",
   },
 ] as const;
 
