@@ -64,7 +64,9 @@ export function Work({ dict, clients }: { dict: Dict; clients: Client[] }) {
             <Reveal key={study.slug} delay={(index % 2) * 0.06}>
               <article className="card card-lift flex h-full flex-col p-6 md:p-7">
                 <div className="flex items-center gap-4">
-                  <span className="monogram h-12 w-12 shrink-0 rounded-xl text-sm">{initials(study.client)}</span>
+                  {dict.dir === "ltr" ? (
+                    <span className="monogram h-12 w-12 shrink-0 rounded-xl text-sm">{initials(study.client)}</span>
+                  ) : null}
                   <div className="min-w-0">
                     <h3 className="text-lg font-semibold text-cream">{study.client}</h3>
                     <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted/75">{study.category}</p>

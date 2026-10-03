@@ -142,9 +142,9 @@ export const clients: Client[] = [
     highlight: "20,000 registration goal · SAR 0.22 overall CPR",
     metrics: [
       { value: "SAR 78,286", label: "Ad investment" },
-      { value: "44.1M", label: "Impressions" },
-      { value: "497,221", label: "Link clicks" },
+      { value: "20,000", label: "Registration goal" },
       { value: "SAR 0.22", label: "Overall CPR" },
+      { value: "SAR 0.48", label: "GCC CPR" },
     ],
     ar: {
       client: "معرض الشرق الأوسط للدواجن (MEP Expo)",
@@ -156,9 +156,9 @@ export const clients: Client[] = [
       highlight: "هدف 20,000 تسجيل · تكلفة التسجيل 0.22 ر.س",
       metrics: [
         { value: "78,286 ر.س", label: "الإنفاق الإعلاني" },
-        { value: "44.1 مليون", label: "الظهور" },
-        { value: "497,221", label: "نقرات الرابط" },
+        { value: "20,000", label: "هدف التسجيلات" },
         { value: "0.22 ر.س", label: "تكلفة التسجيل (إجمالي)" },
+        { value: "0.48 ر.س", label: "تكلفة التسجيل (الخليج)" },
       ],
     },
   },

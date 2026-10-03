@@ -141,13 +141,6 @@ html[dir="rtl"] .chip { letter-spacing: 0; text-transform: none; }
 .panel-row:first-child { border-top: 0; }
 .panel-row .pip { width: .375rem; height: .375rem; border-radius: 999px; background: var(--accent); flex: none; }
 
-/* Animated counters: final value is always in the HTML.
-   Without JS the static value shows; with JS the animated one takes over. */
-.counter-static { display: inline; }
-.counter-anim { display: none; }
-html.js .counter-static { display: none; }
-html.js .counter-anim { display: inline; }
-
 :focus-visible { outline: 2px solid rgba(238,187,88,.85); outline-offset: 2px; }
 
 @media (prefers-reduced-motion: reduce) {

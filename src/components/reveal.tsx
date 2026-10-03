@@ -1,7 +1,7 @@
 "use client";
 
 import { motion, useReducedMotion } from "framer-motion";
-import { useEffect, useState, type ReactNode } from "react";
+import { useEffect, useRef, useState, type ReactNode } from "react";
 
 export function Reveal({ children, delay = 0, y = 18, className = "" }: { children: ReactNode; delay?: number; y?: number; className?: string }) {
   const reduce = useReducedMotion();
@@ -46,29 +46,51 @@ export function RotatingText({ items, className = "" }: { items: readonly string
   );
 }
 
+/**
+ * Single text node: the final value is what the server renders, so
+ * no-JS and reduced-motion users always see "12+", never "0+".
+ * The count-up plays once when the number scrolls into view.
+ */
 export function CountUp({ to, suffix = "", className = "" }: { to: number; suffix?: string; className?: string }) {
   const reduce = useReducedMotion();
-  const [value, setValue] = useState(0);
+  const ref = useRef<HTMLSpanElement | null>(null);
+  const [display, setDisplay] = useState(to);
 
   useEffect(() => {
     if (reduce) return;
+    const el = ref.current;
+    if (!el || typeof IntersectionObserver === "undefined") return;
+
     let frame = 0;
-    const start = performance.now();
-    const duration = 1100;
-    const tick = (now: number) => {
-      const progress = Math.min(1, (now - start) / duration);
-      const eased = 1 - Math.pow(1 - progress, 3);
-      setValue(Math.round(to * eased));
-      if (progress < 1) frame = requestAnimationFrame(tick);
+    let played = false;
+
+    const io = new IntersectionObserver((entries) => {
+      if (!entries[0] || !entries[0].isIntersecting || played) return;
+      played = true;
+      io.disconnect();
+
+      const start = performance.now();
+      const duration = 1100;
+      const tick = (now: number) => {
+        const progress = Math.min(1, (now - start) / duration);
+        const eased = 1 - Math.pow(1 - progress, 3);
+        setDisplay(Math.round(to * eased));
+        if (progress < 1) frame = requestAnimationFrame(tick);
+      };
+      frame = requestAnimationFrame(tick);
+    });
+
+    io.observe(el);
+    return () => {
+      io.disconnect();
+      if (frame) cancelAnimationFrame(frame);
     };
-    frame = requestAnimationFrame(tick);
-    return () => cancelAnimationFrame(frame);
-  }, [to, reduce]);
+  }, [reduce, to]);
 
   return (
-    <span className={className}>
-      <span className="counter-static">{to}{suffix}</span>
-      <span className="counter-anim">{reduce ? to : value}{suffix}</span>
+    <span ref={ref} className={className}>
+      {reduce ? to : display}
+      {suffix}
     </span>
   );
 }
