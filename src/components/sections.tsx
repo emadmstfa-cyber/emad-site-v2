@@ -86,6 +86,16 @@ export function Work() {
                     <dd className="mt-1 text-cream/85">{study.outcome}</dd>
                   </div>
                 </dl>
+                {study.metrics && study.metrics.length > 0 ? (
+                  <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    {study.metrics.map((m) => (
+                      <div key={m.label} className="rounded-xl border border-gold/20 bg-gold/[0.06] px-3 py-2.5">
+                        <p className="text-base font-semibold text-gold">{m.value}</p>
+                        <p className="mt-0.5 text-[11px] uppercase tracking-wider text-muted/75">{m.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
                 <div className="mt-6 flex flex-wrap gap-2">
                   {study.channels.map((channel) => (
                     <span key={channel} className="rounded-full border border-white/10 px-3 py-1 text-[11px] uppercase tracking-wider text-muted">{channel}</span>
@@ -207,6 +217,18 @@ export function About() {
               </article>
             </Reveal>
           ))}
+          <Reveal delay={0.2}>
+            <div className="card p-6">
+              <p className="text-xs uppercase tracking-[0.18em] text-gold">Selected clients</p>
+              <div className="mt-4 flex flex-wrap gap-2">
+                {caseStudies.map((study) => (
+                  <span key={study.slug} className="rounded-full border border-cream/10 bg-cream/5 px-3 py-1.5 text-xs text-cream/85">
+                    {study.client}
+                  </span>
+                ))}
+              </div>
+            </div>
+          </Reveal>
         </div>
       </div>
     </section>

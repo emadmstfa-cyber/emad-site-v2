@@ -75,7 +75,7 @@ export function Hero() {
               <dl className="grid grid-cols-2 gap-4 text-sm">
                 <div>
                   <dt className="text-muted/75">Current role</dt>
-                  <dd className="mt-1 font-medium text-cream">Managing Director</dd>
+                  <dd className="mt-1 font-medium text-cream">Director of Digital Marketing & Media Monitoring</dd>
                 </div>
                 <div>
                   <dt className="text-muted/75">Company</dt>

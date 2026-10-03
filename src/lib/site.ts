@@ -49,7 +49,7 @@ export const stats: Stat[] = [
   { value: 12, suffix: "+", label: "Years Experience", sublabel: "Digital, growth and technology" },
   { value: 80, suffix: "+", label: "Campaigns", sublabel: "Across paid media and growth" },
   { value: 10, suffix: "+", label: "Sectors", sublabel: "Diversified industry exposure" },
-  { value: null, label: "Managing Director", sublabel: "WE Marketing" },
+  { value: null, label: "Director of Digital Marketing & Media Monitoring", sublabel: "WE Marketing" },
   { value: null, label: "Founder", sublabel: "MarketPilot" },
 ];
 
@@ -116,6 +116,7 @@ export type CaseStudy = {
   outcome: string;
   channels: string[];
   highlight?: string;
+  metrics?: { value: string; label: string }[];
 };
 
 export const caseStudies: CaseStudy[] = [
@@ -129,6 +130,10 @@ export const caseStudies: CaseStudy[] = [
     outcome: "Delivered measurable growth in bookings and profitability.",
     channels: ["Meta", "Google", "CRM"],
     highlight: "+35% bookings · +30% profits",
+    metrics: [
+      { value: "+35%", label: "Bookings" },
+      { value: "+30%", label: "Profits" },
+    ],
   },
   {
     slug: "saed-recruitment",
@@ -140,6 +145,10 @@ export const caseStudies: CaseStudy[] = [
     outcome: "Delivered within three months of launch.",
     channels: ["Meta", "Google", "CRM / Automation"],
     highlight: "+45% sales in 3 months",
+    metrics: [
+      { value: "+45%", label: "Sales growth" },
+      { value: "3 mo", label: "Time to result" },
+    ],
   },
   {
     slug: "mep-expo",
@@ -148,8 +157,31 @@ export const caseStudies: CaseStudy[] = [
     challenge: "Drive qualified visitor acquisition at scale.",
     strategy: "Performance acquisition layered with content and remarketing.",
     execution: "Multi-channel paid acquisition, creative system and conversion tracking.",
-    outcome: "Campaign structure and acquisition system delivered.",
-    channels: ["Meta", "Google", "TikTok"],
+    outcome: "Multi-channel acquisition delivered against confirmed September 2026 campaign data.",
+    channels: ["Meta", "X"],
+    metrics: [
+      { value: "SAR 78,286", label: "Ad investment" },
+      { value: "44.1M", label: "Impressions" },
+      { value: "497,221", label: "Link clicks" },
+      { value: "SAR 175", label: "Cost / sign-up" },
+    ],
+  },
+  {
+    slug: "code-it",
+    client: "Code It (CODE IT)",
+    category: "B2B Technology · Lead Generation",
+    challenge: "Generate qualified pipeline across POS and accounting solutions for three sectors.",
+    strategy: "Multi-platform performance engine with CRM automation and lead-quality hardening.",
+    execution: "Snapchat, Meta, Google and TikTok campaigns wired into MiniCRM and SAVOXX via 18 Zapier workflows.",
+    outcome: "Confirmed September 2026 performance across four platforms.",
+    channels: ["Snapchat", "Meta", "Google", "MiniCRM"],
+    highlight: "285 leads · 155.91 SAR / lead",
+    metrics: [
+      { value: "44,435 SAR", label: "Spend" },
+      { value: "4.28M", label: "Impressions" },
+      { value: "11,664", label: "Clicks" },
+      { value: "285", label: "Leads" },
+    ],
   },
   {
     slug: "marketpilot",
@@ -202,7 +234,7 @@ export const techStack = {
 
 export const experience = [
   {
-    role: "Managing Director",
+    role: "Director of Digital Marketing & Media Monitoring",
     org: "WE Marketing",
     period: "Current",
     detail: "Leading growth, performance and digital transformation engagements across sectors in KSA and the region.",
