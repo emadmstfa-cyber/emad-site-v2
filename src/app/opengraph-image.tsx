@@ -25,7 +25,7 @@ export default async function OpengraphImage() {
           width: "100%",
           height: "100%",
           display: "flex",
-          background: "linear-gradient(135deg, #070a14 0%, #0b1020 55%, #0e2a3a 100%)",
+          background: "linear-gradient(135deg, #0b0907 0%, #14110f 55%, #2a2113 100%)",
           color: "#f8fafc",
           fontFamily: "sans-serif",
         }}
@@ -37,29 +37,29 @@ export default async function OpengraphImage() {
                 width: 56,
                 height: 56,
                 borderRadius: 16,
-                background: "linear-gradient(135deg, #67e8f9, #0284c7)",
+                background: "linear-gradient(135deg, #f3d392, #c48225)",
                 display: "flex",
                 alignItems: "center",
                 justifyContent: "center",
-                color: "#04141c",
+                color: "#1a1511",
                 fontSize: 24,
                 fontWeight: 700,
               }}
             >
               EM
             </div>
-            <div style={{ fontSize: 22, letterSpacing: "0.16em", textTransform: "uppercase", color: "#94a3b8" }}>
+            <div style={{ fontSize: 22, letterSpacing: "0.16em", textTransform: "uppercase", color: "#a89f92" }}>
               {siteConfig.handle}
             </div>
           </div>
           <div style={{ display: "flex", flexDirection: "column" }}>
             <div style={{ fontSize: 62, fontWeight: 700, lineHeight: 1.05 }}>{siteConfig.name}</div>
-            <div style={{ marginTop: 16, fontSize: 30, color: "#67e8f9" }}>
+            <div style={{ marginTop: 16, fontSize: 30, color: "#eebb58" }}>
               Digital Growth · AI Automation · MarTech
             </div>
-            <div style={{ marginTop: 22, fontSize: 24, color: "#94a3b8" }}>{siteConfig.legalName}</div>
+            <div style={{ marginTop: 22, fontSize: 24, color: "#a89f92" }}>{siteConfig.legalName}</div>
           </div>
-          <div style={{ fontSize: 24, color: "#94a3b8" }}>emadmstfa.com</div>
+          <div style={{ fontSize: 24, color: "#a89f92" }}>emadmstfa.com</div>
         </div>
         {portrait ? (
           <div style={{ display: "flex", width: 420, height: 630, overflow: "hidden" }}>

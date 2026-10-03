@@ -10,7 +10,7 @@ const socials = [
 ];
 
 const overlayStyle = {
-  background: "linear-gradient(to top, rgba(11,16,32,0.97) 0%, rgba(11,16,32,0.78) 42%, rgba(11,16,32,0) 100%)",
+  background: "linear-gradient(to top, rgba(20,17,15,0.97) 0%, rgba(20,17,15,0.78) 42%, rgba(20,17,15,0) 100%)",
 };
 
 export function Hero() {
@@ -22,20 +22,20 @@ export function Hero() {
             <span className="chip"><span className="dot" /> Digital Growth · AI Automation · MarTech</span>
           </Reveal>
           <Reveal delay={0.05}>
-            <h1 className="mt-6 text-4xl font-semibold leading-[1.06] tracking-tight text-white sm:text-5xl md:text-6xl">
+            <h1 className="mt-6 text-4xl font-semibold leading-[1.06] tracking-tight text-cream sm:text-5xl md:text-6xl">
               {siteConfig.name}
               <span className="text-gradient mt-3 block">Growth, automation and decision systems.</span>
             </h1>
           </Reveal>
           <Reveal delay={0.1}>
-            <p className="mt-6 max-w-2xl text-base leading-relaxed text-slate-300 md:text-lg">
+            <p className="mt-6 max-w-2xl text-base leading-relaxed text-cream/85 md:text-lg">
               {siteConfig.description}
             </p>
           </Reveal>
           <Reveal delay={0.15}>
-            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-slate-400">
-              <span className="text-slate-500">Focus</span>
-              <span className="font-semibold text-cyan-300"><RotatingText items={rotatingExpertise} /></span>
+            <div className="mt-6 flex flex-wrap items-center gap-3 text-sm text-muted">
+              <span className="text-muted/75">Focus</span>
+              <span className="font-semibold text-gold"><RotatingText items={rotatingExpertise} /></span>
             </div>
           </Reveal>
           <Reveal delay={0.2}>
@@ -47,7 +47,7 @@ export function Hero() {
           <Reveal delay={0.25}>
             <div className="mt-8 flex flex-wrap items-center gap-x-5 gap-y-3 text-sm">
               {socials.map((item) => (
-                <a key={item.label} href={item.href} target="_blank" rel="noreferrer noopener" className="text-slate-400 transition-colors hover:text-cyan-300">
+                <a key={item.label} href={item.href} target="_blank" rel="noreferrer noopener" className="text-muted transition-colors hover:text-gold">
                   {item.label}
                 </a>
               ))}
@@ -67,27 +67,27 @@ export function Hero() {
                 priority
               />
               <div className="absolute inset-x-0 bottom-0 px-6 pb-6 pt-24" style={overlayStyle}>
-                <p className="text-lg font-semibold text-white">{siteConfig.legalName}</p>
-                <p className="text-sm text-slate-300">{siteConfig.handle}</p>
+                <p className="text-lg font-semibold text-cream">{siteConfig.legalName}</p>
+                <p className="text-sm text-cream/85">{siteConfig.handle}</p>
               </div>
             </div>
             <div className="p-6 md:p-7">
               <dl className="grid grid-cols-2 gap-4 text-sm">
                 <div>
-                  <dt className="text-slate-500">Current role</dt>
-                  <dd className="mt-1 font-medium text-slate-200">Managing Director</dd>
+                  <dt className="text-muted/75">Current role</dt>
+                  <dd className="mt-1 font-medium text-cream">Managing Director</dd>
                 </div>
                 <div>
-                  <dt className="text-slate-500">Company</dt>
-                  <dd className="mt-1 font-medium text-slate-200">WE Marketing</dd>
+                  <dt className="text-muted/75">Company</dt>
+                  <dd className="mt-1 font-medium text-cream">WE Marketing</dd>
                 </div>
                 <div>
-                  <dt className="text-slate-500">Founder</dt>
-                  <dd className="mt-1 font-medium text-slate-200">MarketPilot</dd>
+                  <dt className="text-muted/75">Founder</dt>
+                  <dd className="mt-1 font-medium text-cream">MarketPilot</dd>
                 </div>
                 <div>
-                  <dt className="text-slate-500">Focus</dt>
-                  <dd className="mt-1 font-medium text-slate-200">Growth · AI · Data</dd>
+                  <dt className="text-muted/75">Focus</dt>
+                  <dd className="mt-1 font-medium text-cream">Growth · AI · Data</dd>
                 </div>
               </dl>
             </div>
@@ -106,8 +106,8 @@ export function Hero() {
                   <CountUp to={item.value} suffix={item.suffix} />
                 )}
               </p>
-              {item.value === null ? null : <p className="mt-1 text-sm font-medium text-slate-300">{item.label}</p>}
-              <p className="text-xs text-slate-500">{item.sublabel}</p>
+              {item.value === null ? null : <p className="mt-1 text-sm font-medium text-cream/85">{item.label}</p>}
+              <p className="text-xs text-muted/75">{item.sublabel}</p>
             </div>
           ))}
         </div>

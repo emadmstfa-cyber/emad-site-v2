@@ -1,23 +1,29 @@
 import type { Metadata, Viewport } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Geist_Mono, Inter, Tajawal } from "next/font/google";
 import { siteConfig } from "@/lib/site";
 import "./globals.css";
 
-const geistSans = Geist({ variable: "--font-geist-sans", subsets: ["latin"] });
-const geistMono = Geist_Mono({ variable: "--font-geist-mono", subsets: ["latin"] });
+const inter = Inter({ variable: "--font-sans", subsets: ["latin"], display: "swap" });
+const tajawal = Tajawal({
+  variable: "--font-arabic",
+  subsets: ["arabic", "latin"],
+  weight: ["400", "500", "700", "800"],
+  display: "swap",
+});
+const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"], display: "swap" });
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
   title: {
     default: siteConfig.title,
-    template: `%s — ${siteConfig.name}`,
+    template: "%s — " + siteConfig.name,
   },
   description: siteConfig.description,
   applicationName: siteConfig.name,
   authors: [{ name: siteConfig.legalName, url: siteConfig.url }],
   creator: siteConfig.legalName,
   publisher: siteConfig.legalName,
-  alternates: { canonical: siteConfig.url },
+  alternates: { canonical: siteConfig.url, languages: { "en-US": "/", "ar": "/ar" } },
   openGraph: {
     type: "website",
     locale: "en_US",
@@ -50,7 +56,7 @@ export const metadata: Metadata = {
 };
 
 export const viewport: Viewport = {
-  themeColor: "#070a14",
+  themeColor: "#0b0907",
   colorScheme: "dark",
 };
 
@@ -73,13 +79,13 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
     inLanguage: "en",
   };
   return (
-    <html lang="en" dir="ltr" className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}>
-      <body className="min-h-full flex flex-col bg-[#070a14] text-slate-100">
+    <html lang="en" dir="ltr" className={inter.variable + " " + tajawal.variable + " " + mono.variable + " h-full antialiased"}>
+      <body className="min-h-full flex flex-col bg-ink text-cream">
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personJsonLd) }} />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteJsonLd) }} />
         <a
           href="#main"
-          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-slate-900"
+          className="sr-only focus:not-sr-only focus:fixed focus:left-4 focus:top-4 focus:z-[100] focus:rounded-full focus:bg-white focus:px-4 focus:py-2 focus:text-sm focus:font-medium focus:text-ink"
         >
           Skip to content
         </a>
