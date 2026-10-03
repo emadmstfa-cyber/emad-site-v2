@@ -6,7 +6,7 @@ import { useEffect, useRef, useState, type ReactNode } from "react";
  * Reveal on scroll — CSS transition + IntersectionObserver.
  * No animation library: keeps the bundle small and TBT low.
  */
-export function Reveal({ children, delay = 0, y = 18, className = "" }: { children: ReactNode; delay?: number; y?: number; className?: string }) {
+export function Reveal({ children, delay = 0, className = "" }: { children: ReactNode; delay?: number; className?: string }) {
   const ref = useRef<HTMLDivElement | null>(null);
   const [shown, setShown] = useState(false);
 
