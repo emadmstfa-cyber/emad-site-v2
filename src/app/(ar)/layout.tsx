@@ -9,7 +9,7 @@ const inter = Inter({ variable: "--font-sans", subsets: ["latin"], display: "swa
 const tajawal = Tajawal({
   variable: "--font-arabic",
   subsets: ["arabic", "latin"],
-  weight: ["400", "500", "700", "800"],
+  weight: ["400", "500", "700"],
   display: "swap",
 });
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"], display: "swap" });

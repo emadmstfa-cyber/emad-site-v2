@@ -1,18 +1,12 @@
 import type { Metadata, Viewport } from "next";
-import { Geist_Mono, Inter, Tajawal } from "next/font/google";
+import { Geist_Mono, Inter } from "next/font/google";
 import type { ReactNode } from "react";
 import { siteConfig } from "@/lib/site";
 import "../globals.css";
 
 const inter = Inter({ variable: "--font-sans", subsets: ["latin"], display: "swap" });
-const tajawal = Tajawal({
-  variable: "--font-arabic",
-  subsets: ["arabic", "latin"],
-  weight: ["400", "500", "700", "800"],
-  display: "swap",
-});
 const mono = Geist_Mono({ variable: "--font-mono", subsets: ["latin"], display: "swap" });
-const fontVars = inter.variable + " " + tajawal.variable + " " + mono.variable;
+const fontVars = inter.variable + " " + mono.variable;
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteConfig.url),
