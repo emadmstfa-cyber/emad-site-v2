@@ -1,5 +1,6 @@
 import { Reveal } from "@/components/reveal";
 import type { Client } from "@/lib/clients";
+import type { CaseStudyDetail } from "@/lib/case-studies";
 import type { Dict } from "@/lib/i18n";
 
 function initials(name: string): string {
@@ -262,6 +263,131 @@ export function Contact({ dict, linkedin }: { dict: Dict; linkedin: string }) {
               <a href="#top" className="btn btn-ghost">{dict.contact.top}</a>
             </div>
           </Reveal>
+        </div>
+      </div>
+    </section>
+  );
+}
+
+/* ============================ Featured case studies ============================ */
+
+function caseHref(dir: "ltr" | "rtl", slug: string) {
+  return (dir === "rtl" ? "/ar/work/" : "/work/") + slug;
+}
+
+export function FeaturedWork({ dict, studies }: { dict: Dict; studies: CaseStudyDetail[] }) {
+  return (
+    <section id="work" className="border-b border-cream/5 py-20 md:py-28">
+      <div className="shell">
+        <SectionHeading eyebrow={dict.work.featuredEyebrow} title={dict.work.featuredTitle} />
+        <div className="mt-12 grid gap-6 lg:grid-cols-3">
+          {studies.map((study, index) => {
+            const copy = dict.dir === "rtl" ? study.ar : study.en;
+            return (
+              <Reveal key={study.slug} delay={index * 0.06}>
+                <a href={caseHref(dict.dir, study.slug)} className="card card-lift group flex h-full flex-col overflow-hidden">
+                  <div className="relative aspect-[16/10] w-full overflow-hidden border-b border-cream/10 bg-ink-2">
+                    <span className="glow-gold" />
+                    <div className="absolute inset-0 flex flex-col justify-end p-5">
+                      <p className="text-[11px] uppercase tracking-[0.2em] text-gold">{copy.industry}</p>
+                      <p className="mt-2 text-2xl font-semibold leading-tight text-cream">{study.client}</p>
+                      {study.project ? <p className="mt-1 text-sm text-cream/85">{study.project}</p> : null}
+                    </div>
+                  </div>
+
+                  <div className="flex flex-1 flex-col p-6">
+                    <p className="text-xl font-semibold text-gold">{copy.heroResult}</p>
+
+                    <div className="mt-4 grid grid-cols-2 gap-2">
+                      {study.heroMetrics.slice(1, 3).map((m) => (
+                        <div key={m.label} className="rounded-lg border border-cream/10 bg-cream/[0.03] px-3 py-2">
+                          <p className="text-sm font-semibold text-cream">{m.value}</p>
+                          <p className="mt-0.5 text-[10px] uppercase tracking-wider text-muted/75">{m.label}</p>
+                        </div>
+                      ))}
+                    </div>
+
+                    <p className="mt-4 text-sm leading-relaxed text-muted">{copy.summary}</p>
+
+                    <div className="mt-4 flex flex-wrap gap-2">
+                      {copy.services.map((s) => (
+                        <span key={s} className="rounded-full border border-cream/10 px-3 py-1 text-[11px] text-cream/85">{s}</span>
+                      ))}
+                    </div>
+
+                    <span className="mt-auto pt-6 text-sm font-semibold text-gold transition-transform group-hover:translate-x-1 rtl:group-hover:-translate-x-1">
+                      {dict.work.viewCase} →
+                    </span>
+                  </div>
+                </a>
+              </Reveal>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function MoreWork({ dict, clients }: { dict: Dict; clients: Client[] }) {
+  return (
+    <section id="more-work" className="border-b border-cream/5 py-20 md:py-28">
+      <div className="shell">
+        <SectionHeading eyebrow={dict.work.moreEyebrow} title={dict.work.moreTitle} />
+        <div className="mt-12 grid gap-5 lg:grid-cols-2">
+          {clients.map((study, index) => (
+            <Reveal key={study.slug} delay={(index % 2) * 0.06}>
+              <article className="card card-lift flex h-full flex-col p-6 md:p-7">
+                <div className="flex items-center gap-4">
+                  {dict.dir === "ltr" ? (
+                    <span className="monogram h-12 w-12 shrink-0 rounded-xl text-sm">{initials(study.client)}</span>
+                  ) : null}
+                  <div className="min-w-0">
+                    <h3 className="text-lg font-semibold text-cream">{study.client}</h3>
+                    <p className="mt-1 text-xs uppercase tracking-[0.16em] text-muted/75">{study.category}</p>
+                  </div>
+                </div>
+
+                {study.highlight ? (
+                  <p className="mt-5 inline-flex w-fit rounded-full border border-gold/30 bg-gold/10 px-3 py-1.5 text-xs font-semibold text-gold">
+                    {study.highlight}
+                  </p>
+                ) : null}
+
+                <dl className="mt-5 space-y-4 text-sm">
+                  <div>
+                    <dt className="text-muted/75">{dict.work.challenge}</dt>
+                    <dd className="mt-1 text-cream/85">{study.challenge}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted/75">{dict.work.approach}</dt>
+                    <dd className="mt-1 text-cream/85">{study.strategy}</dd>
+                  </div>
+                  <div>
+                    <dt className="text-muted/75">{dict.work.outcome}</dt>
+                    <dd className="mt-1 text-cream/85">{study.outcome}</dd>
+                  </div>
+                </dl>
+
+                {study.metrics && study.metrics.length > 0 ? (
+                  <div className="mt-6 grid grid-cols-2 gap-3 sm:grid-cols-4">
+                    {study.metrics.map((m) => (
+                      <div key={m.label} className="rounded-xl border border-gold/20 bg-gold/[0.06] px-3 py-2.5">
+                        <p className="text-base font-semibold text-gold">{m.value}</p>
+                        <p className="mt-0.5 text-[11px] uppercase tracking-wider text-muted/75">{m.label}</p>
+                      </div>
+                    ))}
+                  </div>
+                ) : null}
+
+                <div className="mt-auto flex flex-wrap gap-2 pt-6">
+                  {study.channels.map((channel) => (
+                    <span key={channel} className="rounded-full border border-cream/10 px-3 py-1 text-[11px] uppercase tracking-wider text-muted transition-colors hover:border-gold/30 hover:text-gold">{channel}</span>
+                  ))}
+                </div>
+              </article>
+            </Reveal>
+          ))}
         </div>
       </div>
     </section>

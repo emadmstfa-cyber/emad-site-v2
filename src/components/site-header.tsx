@@ -1,5 +1,6 @@
 "use client";
 
+import Image from "next/image";
 import { useEffect, useState } from "react";
 import type { Dict } from "@/lib/i18n";
 
@@ -31,7 +32,7 @@ export function SiteHeader({ dict, name }: { dict: Dict; name: string }) {
     <header className={shellClass}>
       <div className="shell flex h-16 items-center justify-between gap-4 md:h-20">
         <a href="#top" className="group flex items-center gap-3">
-          <span className="monogram h-9 w-9 rounded-xl text-sm">EM</span>
+          <Image src="/mark.svg" alt="Emad Moustafa" width={36} height={36} className="h-9 w-9 rounded-xl" priority />
           <span className="flex flex-col leading-tight">
             <span className="text-sm font-semibold tracking-tight text-cream">{name}</span>
             <span className="hidden text-[11px] uppercase tracking-[0.18em] text-muted sm:block">{dict.brandTagline}</span>

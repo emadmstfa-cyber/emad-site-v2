@@ -117,6 +117,34 @@ html[dir="rtl"] .chip { letter-spacing: 0; text-transform: none; }
 .btn-ghost { border: 1px solid var(--border-strong); color: var(--text); background: rgba(245,241,234,.02); }
 .btn-ghost:hover { background: rgba(238,187,88,.10); transform: translateY(-1px); }
 
+/* WhatsApp conversion layer */
+.btn-whatsapp {
+  display: inline-flex; align-items: center; justify-content: center; gap: .5rem;
+  border-radius: 999px; padding: .8rem 1.4rem; font-size: .875rem; font-weight: 600; line-height: 1;
+  border: 1px solid rgba(37, 211, 102, .35);
+  background: rgba(37, 211, 102, .10);
+  color: #d7f8e3;
+  transition: transform .2s ease, background-color .2s ease, border-color .2s ease;
+}
+.btn-whatsapp:hover { background: rgba(37, 211, 102, .18); border-color: rgba(37, 211, 102, .55); transform: translateY(-1px); }
+
+.wa-float {
+  position: fixed;
+  bottom: 1.25rem;
+  inset-inline-end: 1.25rem;
+  z-index: 40;
+  display: inline-flex; align-items: center; justify-content: center;
+  width: 3.25rem; height: 3.25rem;
+  border-radius: 999px;
+  background: linear-gradient(135deg, #2ec66b, #1f9d55);
+  color: #05140c;
+  box-shadow: 0 18px 44px -18px rgba(37, 211, 102, .70), 0 0 0 1px rgba(245,241,234,.06);
+  transition: transform .22s ease, box-shadow .22s ease, filter .22s ease;
+}
+.wa-float:hover { transform: translateY(-2px); filter: brightness(1.05); }
+.wa-float:focus-visible { outline: 2px solid rgba(238,187,88,.9); outline-offset: 3px; }
+@media (min-width: 768px) { .wa-float { bottom: 1.75rem; inset-inline-end: 1.75rem; } }
+
 .hairline { height: 1px; width: 100%; background: linear-gradient(90deg, transparent, rgba(238,187,88,.30), transparent); }
 
 .monogram {

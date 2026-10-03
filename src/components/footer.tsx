@@ -1,3 +1,4 @@
+import Image from "next/image";
 import type { Dict } from "@/lib/i18n";
 
 export function SiteFooter({ dict, name, legalName, socials }: {
@@ -20,7 +21,7 @@ export function SiteFooter({ dict, name, legalName, socials }: {
       <div className="shell flex flex-col gap-8 md:flex-row md:items-start md:justify-between">
         <div className="max-w-sm">
           <div className="flex items-center gap-3">
-            <span className="monogram h-9 w-9 rounded-xl text-sm">EM</span>
+            <Image src="/mark.svg" alt="Emad Moustafa" width={36} height={36} className="h-9 w-9 rounded-xl" />
             <span className="text-sm font-semibold text-cream">{name}</span>
           </div>
           <p className="mt-4 text-sm leading-relaxed text-muted">{dict.hero.chip}. {legalName}.</p>

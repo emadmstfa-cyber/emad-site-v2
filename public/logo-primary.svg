@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 72" width="420" height="72" role="img" aria-label="Emad Moustafa">
+  <defs>
+    <linearGradient id="gp" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#f3d392"/>
+      <stop offset="0.5" stop-color="#eebb58"/>
+      <stop offset="1" stop-color="#c48225"/>
+    </linearGradient>
+  </defs>
+  <g transform="translate(0,4)">
+    <rect x="0" y="0" width="64" height="64" rx="15" fill="#14110f"/>
+    <rect x="0.75" y="0.75" width="62.5" height="62.5" rx="14.5" fill="none" stroke="#eebb58" stroke-opacity="0.22" stroke-width="1.5"/>
+    <g fill="none" stroke="url(#gp)" stroke-width="4.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M16 20 V44"/><path d="M16 20 H27"/><path d="M16 32 H31"/><path d="M16 44 H35"/>
+      <path d="M40 44 V20"/><path d="M40 20 L48.5 32 L57 20"/><path d="M57 20 V44"/>
+    </g>
+  </g>
+  <text x="84" y="34" fill="#f5f1ea" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="26" font-weight="600" letter-spacing="-0.3">Emad Moustafa</text>
+  <text x="85" y="55" fill="#a89f92" font-family="Inter, ui-sans-serif, system-ui, -apple-system, 'Segoe UI', sans-serif" font-size="12.5" font-weight="500" letter-spacing="2.4">DIGITAL GROWTH · AI AUTOMATION</text>
+</svg>

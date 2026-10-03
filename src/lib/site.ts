@@ -18,6 +18,15 @@ export const siteConfig = {
   contact: {
     emailPlaceholder: "hello@emadmstfa.com",
   },
+  /**
+   * رقم WhatsApp | WhatsApp number
+   * المصدر: الرقم المستخدم فعليًا في مشاريع Emad ومراسلاته الرسمية
+   * (+966 570 250 760) — لم يُخترع أي رقم.
+   */
+  whatsapp: {
+    number: "966570250760",
+    display: "+966 570 250 760",
+  },
 } as const;
 
 /**

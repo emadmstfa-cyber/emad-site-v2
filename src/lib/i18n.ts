@@ -34,7 +34,7 @@ export type Dict = {
   };
   stats: StatItem[];
   expertise: { eyebrow: string; title: string; lead: string; areas: AreaItem[] };
-  work: { eyebrow: string; title: string; lead: string; challenge: string; approach: string; outcome: string };
+  work: { eyebrow: string; title: string; lead: string; challenge: string; approach: string; outcome: string; featuredEyebrow: string; featuredTitle: string; moreEyebrow: string; moreTitle: string; viewCase: string; projectLabel: string; };
   marketpilot: { chip: string; text: string; cta1: string; cta2: string; points: string[] };
   stack: { eyebrow: string; title: string; lead: string; groups: { title: string; items: string[] }[] };
   about: {
@@ -47,6 +47,7 @@ export type Dict = {
   };
   contact: { eyebrow: string; title: string; text: string; cta: string; top: string };
   footer: { rights: string; note: string };
+  whatsapp: { floatLabel: string; cta: string; message: string };
   meta: { title: string; description: string; ogLocale: string; jobTitle: string };
 };
 
@@ -100,6 +101,12 @@ export const dicts: Record<Lang, Dict> = {
       challenge: "Challenge",
       approach: "Approach",
       outcome: "Outcome",
+      featuredEyebrow: "Featured case studies",
+      featuredTitle: "Selected work with measurable business impact.",
+      moreEyebrow: "More selected work",
+      moreTitle: "Additional engagements across sectors.",
+      viewCase: "View case study",
+      projectLabel: "Project",
     },
     marketpilot: {
       chip: "Product · Founder",
@@ -145,6 +152,11 @@ export const dicts: Record<Lang, Dict> = {
       top: "Back to top",
     },
     footer: { rights: "All rights reserved.", note: "Website V2 preview" },
+    whatsapp: {
+      floatLabel: "Chat on WhatsApp",
+      cta: "Chat on WhatsApp",
+      message: "Hello Emad, I visited emadmstfa.com and would like to discuss a potential project.",
+    },
     meta: {
       title: "Emad Moustafa — Digital Growth × AI Automation × MarTech",
       description: "Digital Growth Consultant × AI Automation Specialist × Technology Founder × Marketing Executive. I build growth, automation and monitoring systems that turn marketing, data and AI into measurable business outcomes.",
@@ -202,6 +214,12 @@ export const dicts: Record<Lang, Dict> = {
       challenge: "التحدي",
       approach: "الاستراتيجية",
       outcome: "النتيجة",
+      featuredEyebrow: "دراسات حالة مميزة",
+      featuredTitle: "أعمال مختارة بأثر ملموس على الأعمال.",
+      moreEyebrow: "المزيد من الأعمال",
+      moreTitle: "مشاريع إضافية في قطاعات متنوعة.",
+      viewCase: "اطّلع على دراسة الحالة",
+      projectLabel: "المشروع",
     },
     marketpilot: {
       chip: "منتج · المؤسِّس",
@@ -247,6 +265,11 @@ export const dicts: Record<Lang, Dict> = {
       top: "إلى الأعلى",
     },
     footer: { rights: "جميع الحقوق محفوظة.", note: "النسخة الثانية — معاينة" },
+    whatsapp: {
+      floatLabel: "تواصل عبر واتساب",
+      cta: "تواصل عبر واتساب",
+      message: "مرحبًا عماد، زرت موقع emadmstfa.com وأرغب في مناقشة مشروع محتمل معك.",
+    },
     meta: {
       title: "عماد مصطفى — النمو الرقمي × أتمتة الذكاء الاصطناعي × تقنيات التسويق",
       description: "مستشار نمو رقمي × متخصص أتمتة بالذكاء الاصطناعي × مؤسِّس تقني × تنفيذي تسويقي. أبني أنظمة النمو والأتمتة والرصد التي تحوّل التسويق والبيانات والذكاء الاصطناعي إلى نتائج أعمال قابلة للقياس.",
