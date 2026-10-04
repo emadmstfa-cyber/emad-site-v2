@@ -2,6 +2,8 @@ import { Reveal } from "@/components/reveal";
 import type { Client } from "@/lib/clients";
 import type { CaseStudyDetail } from "@/lib/case-studies";
 import type { Dict } from "@/lib/i18n";
+import { siteConfig } from "@/lib/site";
+import { WhatsAppCTA } from "@/components/whatsapp";
 
 function initials(name: string): string {
   const words = name.replace(/[()·\-—]/g, " ").split(/\s+/).filter(Boolean);
@@ -139,7 +141,7 @@ export function MarketPilot({ dict }: { dict: Dict }) {
               <Reveal delay={0.15}>
                 <div className="mt-8 flex flex-wrap gap-3">
                   <a href="#contact" className="btn btn-primary">{dict.marketpilot.cta1}</a>
-                  <a href="#work" className="btn btn-ghost">{dict.marketpilot.cta2}</a>
+                  <a href={siteConfig.platforms.marketpilot} target="_blank" rel="noreferrer noopener" className="btn btn-ghost">{dict.marketpilot.cta2}</a>
                 </div>
               </Reveal>
             </div>
@@ -260,6 +262,8 @@ export function Contact({ dict, linkedin }: { dict: Dict; linkedin: string }) {
           <Reveal delay={0.15}>
             <div className="mt-8 flex flex-wrap items-center gap-3">
               <a href={linkedin} target="_blank" rel="noreferrer noopener" className="btn btn-primary">{dict.contact.cta}</a>
+              <WhatsAppCTA number={siteConfig.whatsapp.number} message={dict.whatsapp.message} label={dict.whatsapp.cta} location="contact-section">{dict.whatsapp.cta}</WhatsAppCTA>
+              <a href={"tel:+" + siteConfig.whatsapp.number} className="btn btn-ghost">{dict.contact.call} · {siteConfig.whatsapp.display}</a>
               <a href="#top" className="btn btn-ghost">{dict.contact.top}</a>
             </div>
           </Reveal>

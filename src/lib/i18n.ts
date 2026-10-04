@@ -45,8 +45,8 @@ export type Dict = {
     experience: ExperienceItem[];
     certifications: CertItem[];
   };
-  contact: { eyebrow: string; title: string; text: string; cta: string; top: string };
-  footer: { rights: string; note: string };
+  contact: { eyebrow: string; title: string; text: string; cta: string; call: string; top: string };
+  footer: { rights: string; projectsLabel: string; projects: { label: string; href: string }[] };
   whatsapp: { floatLabel: string; cta: string; message: string };
   meta: { title: string; description: string; ogLocale: string; jobTitle: string };
 };
@@ -112,7 +112,7 @@ export const dicts: Record<Lang, Dict> = {
       chip: "Product · Founder",
       text: "An AI-powered platform that turns monitoring, source analysis and data into decision-ready output, built and led as founder.",
       cta1: "Discuss a pilot",
-      cta2: "See the case study",
+      cta2: "Visit the platform",
       points: ["Monitoring", "Media / Source Analysis", "Early Warning", "AI-assisted analysis", "Reports", "Decision Support"],
     },
     stack: {
@@ -149,9 +149,17 @@ export const dicts: Record<Lang, Dict> = {
       title: "Building a growth, automation or monitoring system? Let us scope it.",
       text: "Open to consulting and partnership conversations across growth, marketing automation, CRM and decision-support systems.",
       cta: "Connect on LinkedIn",
+      call: "Call",
       top: "Back to top",
     },
-    footer: { rights: "All rights reserved.", note: "Website V2 preview" },
+    footer: {
+      rights: "All rights reserved.",
+      projectsLabel: "My projects",
+      projects: [
+        { label: "MarketPilot platform", href: "https://newmarketpilot.com" },
+        { label: "Damascus DC platform", href: "https://damascusdc.net" },
+      ],
+    },
     whatsapp: {
       floatLabel: "Chat on WhatsApp",
       cta: "Chat on WhatsApp",
@@ -225,7 +233,7 @@ export const dicts: Record<Lang, Dict> = {
       chip: "منتج · المؤسِّس",
       text: "منصة مدعومة بالذكاء الاصطناعي تحوّل الرصد وتحليل المصادر والبيانات إلى مخرجات جاهزة لاتخاذ القرار — بُنيت وتُدار بصفتي المؤسِّس.",
       cta1: "ناقش تجربة",
-      cta2: "اطّلع على الحالة",
+      cta2: "زيارة منصة البايلوت",
       points: ["الرصد", "تحليل المصادر والإعلام", "الإنذار المبكر", "التحليل بمساعدة الذكاء الاصطناعي", "التقارير", "دعم القرار"],
     },
     stack: {
@@ -262,9 +270,17 @@ export const dicts: Record<Lang, Dict> = {
       title: "تبني نظام نمو أو أتمتة أو رصد؟ لنتفق على نطاقه.",
       text: "متاح للنقاشات الاستشارية والشراكات في النمو وأتمتة التسويق وإدارة العملاء وأنظمة دعم القرار.",
       cta: "تواصل عبر LinkedIn",
+      call: "اتصال هاتفي",
       top: "إلى الأعلى",
     },
-    footer: { rights: "جميع الحقوق محفوظة.", note: "النسخة الثانية — معاينة" },
+    footer: {
+      rights: "جميع الحقوق محفوظة.",
+      projectsLabel: "مشاريعي",
+      projects: [
+        { label: "منصة البايلوت", href: "https://newmarketpilot.com" },
+        { label: "منصة دمشق", href: "https://damascusdc.net" },
+      ],
+    },
     whatsapp: {
       floatLabel: "تواصل عبر واتساب",
       cta: "تواصل عبر واتساب",

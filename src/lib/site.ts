@@ -27,6 +27,14 @@ export const siteConfig = {
     number: "966570250760",
     display: "+966 570 250 760",
   },
+  /**
+   * منصات المشاريع | Project platforms
+   * روابط رسمية مؤكدة فقط — لا روابط مُخترعة.
+   */
+  platforms: {
+    marketpilot: "https://newmarketpilot.com",
+    damascus: "https://damascusdc.net",
+  },
 } as const;
 
 /**
