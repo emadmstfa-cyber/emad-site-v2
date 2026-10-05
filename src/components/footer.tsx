@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { Dict } from "@/lib/i18n";
 
 export function SiteFooter({ dict, name, legalName, socials }: {
@@ -7,6 +8,7 @@ export function SiteFooter({ dict, name, legalName, socials }: {
   legalName: string;
   socials: { label: string; href: string }[];
 }) {
+  const isArabic = dict.lang === "ar";
   const links = [
     { href: "#expertise", label: dict.nav.expertise },
     { href: "#work", label: dict.nav.work },
@@ -42,6 +44,9 @@ export function SiteFooter({ dict, name, legalName, socials }: {
       </div>
       <div className="shell mt-10 flex flex-col gap-3 border-t border-cream/5 pt-6 text-xs text-muted/75 sm:flex-row sm:items-center sm:justify-between">
         <p>© {new Date().getFullYear()} {legalName}. {dict.footer.rights}</p>
+        <Link href={isArabic ? "/ar/privacy" : "/privacy"} className="transition-colors hover:text-gold">
+          {isArabic ? "سياسة الخصوصية" : "Privacy Policy"}
+        </Link>
       </div>
     </footer>
   );

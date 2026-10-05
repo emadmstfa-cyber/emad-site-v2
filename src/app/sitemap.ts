@@ -48,5 +48,32 @@ export default function sitemap(): MetadataRoute.Sitemap {
     ];
   });
 
-  return [...home, ...cases];
+  const privacy: MetadataRoute.Sitemap = [
+    {
+      url: siteConfig.url + "/privacy",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: {
+        languages: {
+          en: siteConfig.url + "/privacy",
+          ar: siteConfig.url + "/ar/privacy",
+        },
+      },
+    },
+    {
+      url: siteConfig.url + "/ar/privacy",
+      lastModified: new Date(),
+      changeFrequency: "yearly",
+      priority: 0.3,
+      alternates: {
+        languages: {
+          en: siteConfig.url + "/privacy",
+          ar: siteConfig.url + "/ar/privacy",
+        },
+      },
+    },
+  ];
+
+  return [...home, ...cases, ...privacy];
 }
