@@ -55,6 +55,8 @@ export default function ArLayout({ children }: { children: ReactNode }) {
     url: siteConfig.url,
     sameAs: Object.values(siteConfig.social).filter(Boolean),
     jobTitle: ar.meta.jobTitle,
+    worksFor: { "@type": "Organization", name: "WE Marketing", url: "https://www.wemarketing.media" },
+    knowsAbout: ["أنظمة النمو", "أتمتة التسويق", "MarTech", "توليد العملاء", "تكامل الـ CRM"],
     description: ar.meta.description,
   };
   const websiteJsonLd = {

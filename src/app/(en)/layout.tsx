@@ -59,6 +59,8 @@ export default function EnLayout({ children }: { children: ReactNode }) {
     url: siteConfig.url,
     sameAs: Object.values(siteConfig.social).filter(Boolean),
     jobTitle: "Managing Director, WE Marketing",
+    worksFor: { "@type": "Organization", name: "WE Marketing", url: "https://www.wemarketing.media" },
+    knowsAbout: ["Growth systems", "Marketing automation", "MarTech", "Lead generation", "CRM integration"],
     description: siteConfig.description,
   };
   const websiteJsonLd = {

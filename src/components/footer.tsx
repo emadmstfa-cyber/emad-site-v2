@@ -16,6 +16,9 @@ export function SiteFooter({ dict, name, legalName, socials }: {
     { href: "#stack", label: dict.nav.stack },
     { href: "#about", label: dict.nav.about },
     { href: "#contact", label: dict.nav.contact },
+    { href: isArabic ? "/ar/how-i-work" : "/how-i-work", label: isArabic ? "منهجيتي" : "How I work" },
+    { href: isArabic ? "/ar/insights" : "/insights", label: isArabic ? "المقالات" : "Insights" },
+    { href: isArabic ? "/ar/agency" : "/agency", label: "WE Marketing" },
     { href: dict.switchHref, label: dict.switchLabel },
   ];
   return (

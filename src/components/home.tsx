@@ -2,6 +2,7 @@ import { SiteHeader } from "@/components/site-header";
 import { Hero } from "@/components/hero";
 import { About, Contact, Expertise, FeaturedWork, MarketPilot, MoreWork, Stack } from "@/components/sections";
 import { SiteFooter } from "@/components/footer";
+import { AnswerBlock } from "@/components/answer-block";
 import { WhatsAppFloat } from "@/components/whatsapp";
 import { caseStudiesDetailed } from "@/lib/case-studies";
 import { clients as allClients } from "@/lib/clients";
@@ -27,6 +28,7 @@ export function HomePage({ lang }: { lang: Lang }) {
       <SiteHeader dict={dict} name={legalName} />
       <main id="main-content" className="flex-1">
         <Hero dict={dict} name={name} legalName={legalName} handle={siteConfig.handle} socials={socials} />
+        <AnswerBlock lang={lang} />
         <Expertise dict={dict} />
         <FeaturedWork dict={dict} studies={caseStudiesDetailed} />
         <MoreWork dict={dict} clients={moreWork} />

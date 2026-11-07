@@ -23,6 +23,11 @@ export function SiteHeader({ dict, name }: { dict: Dict; name: string }) {
     { href: "#about", label: dict.nav.about },
     { href: "#contact", label: dict.nav.contact },
   ];
+  const isAr = dict.lang === "ar";
+  const pageLinks = [
+    { href: isAr ? "/ar/how-i-work" : "/how-i-work", label: isAr ? "منهجيتي" : "How I work" },
+    { href: isAr ? "/ar/insights" : "/insights", label: isAr ? "المقالات" : "Insights" },
+  ];
 
   const shellClass =
     "sticky top-0 z-50 transition-colors duration-300 " +
@@ -41,7 +46,12 @@ export function SiteHeader({ dict, name }: { dict: Dict; name: string }) {
 
         <nav className="hidden items-center gap-1 lg:flex">
           {links.map((link) => (
-            <a key={link.href} href={link.href} className="rounded-full px-3.5 py-2 text-sm text-cream/85 transition-colors hover:bg-cream/5 hover:text-gold">
+            <a key={link.href} href={link.href} className="rounded-full px-3 py-2 text-sm text-cream/85 transition-colors hover:bg-cream/5 hover:text-gold">
+              {link.label}
+            </a>
+          ))}
+          {pageLinks.map((link) => (
+            <a key={link.href} href={link.href} className="rounded-full px-3 py-2 text-sm font-medium text-gold transition-colors hover:bg-gold/10">
               {link.label}
             </a>
           ))}
@@ -76,6 +86,11 @@ export function SiteHeader({ dict, name }: { dict: Dict; name: string }) {
           <nav className="shell flex flex-col gap-1 py-4">
             {links.map((link) => (
               <a key={link.href} href={link.href} onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm text-cream hover:bg-cream/5">
+                {link.label}
+              </a>
+            ))}
+            {pageLinks.map((link) => (
+              <a key={link.href} href={link.href} onClick={() => setOpen(false)} className="rounded-xl px-3 py-3 text-sm font-medium text-gold hover:bg-cream/5">
                 {link.label}
               </a>
             ))}
