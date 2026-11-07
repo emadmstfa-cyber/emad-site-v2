@@ -81,6 +81,7 @@ export function Work({ dict, clients }: { dict: Dict; clients: Client[] }) {
                     {study.highlight}
                   </p>
                 ) : null}
+                {study.period ? <p className="mt-2 text-xs text-muted/75">{study.period}</p> : null}
 
                 <dl className="mt-5 space-y-4 text-sm">
                   <div>
@@ -357,6 +358,7 @@ export function MoreWork({ dict, clients }: { dict: Dict; clients: Client[] }) {
                     {study.highlight}
                   </p>
                 ) : null}
+                {study.period ? <p className="mt-2 text-xs text-muted/75">{study.period}</p> : null}
 
                 <dl className="mt-5 space-y-4 text-sm">
                   <div>

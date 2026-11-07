@@ -307,6 +307,7 @@ export function pickClients(clients: Client[], lang: Lang): Client[] {
     return {
       ...c,
       client: ar.client ?? c.client,
+      period: ar.period ?? c.period,
       category: ar.category ?? c.category,
       challenge: ar.challenge ?? c.challenge,
       strategy: ar.strategy ?? c.strategy,

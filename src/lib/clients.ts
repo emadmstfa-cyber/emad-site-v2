@@ -49,6 +49,7 @@ export type ClientMetric = { value: string; label: string };
 
 export type ClientAr = {
   client?: string;
+  period?: string;
   category?: string;
   challenge?: string;
   strategy?: string;
@@ -62,6 +63,7 @@ export type ClientAr = {
 export type Client = {
   slug: string;
   client: string;
+  period?: string;
   category: string;
   challenge: string;
   strategy: string;
@@ -78,6 +80,7 @@ export const clients: Client[] = [
     slug: "consultants-eye-center",
     client: "Consultants Eye Center",
     category: "Healthcare · Performance Marketing",
+    period: "2026",
     challenge: "Improve qualified bookings and marketing efficiency.",
     strategy: "Performance structure plus conversion optimization and audience refinement.",
     execution: "Paid media restructuring, funnel fixes, creative iteration and measurement hardening.",
@@ -90,6 +93,7 @@ export const clients: Client[] = [
     ],
     ar: {
       client: "مركز Consultants Eye للعيون",
+      period: "2026",
       category: "الرعاية الصحية · التسويق بالأداء",
       challenge: "تحسين الحجوزات المؤهلة وكفاءة التسويق.",
       strategy: "هيكلة الأداء مع تحسين التحويل وتنقيح الجمهور.",
@@ -106,6 +110,7 @@ export const clients: Client[] = [
     slug: "saed-recruitment",
     client: "Saed Recruitment",
     category: "Services · Growth",
+    period: "2026",
     challenge: "Accelerate sales from digital channels within a tight window.",
     strategy: "Growth system focused on lead quality and close rate.",
     execution: "Campaign architecture, lead lifecycle and automation across CRM.",
@@ -118,6 +123,7 @@ export const clients: Client[] = [
     ],
     ar: {
       client: "سعيد للتوظيف",
+      period: "2026",
       category: "الخدمات · النمو",
       challenge: "تسريع المبيعات من القنوات الرقمية خلال مدة قصيرة.",
       strategy: "نظام نمو يركّز على جودة العملاء المحتملين ومعدّل الإغلاق.",
@@ -137,14 +143,15 @@ export const clients: Client[] = [
     challenge: "Drive qualified visitor acquisition at scale.",
     strategy: "Performance acquisition layered with content and remarketing.",
     execution: "Multi-channel paid acquisition, creative system and conversion tracking.",
-    outcome: "Multi-channel acquisition delivered against confirmed September 2026 campaign data.",
+    outcome: "Multi-channel acquisition on Meta and X; final attendance confirmed by the organizer at 9,145 visitors (an event outcome, not a platform-attributed conversion).",
     channels: ["Meta", "X"],
-    highlight: "20,000 registration goal · SAR 0.22 overall CPR",
+    period: "Sep – Oct 2026",
+    highlight: "SAR 98,670.83 invested · 9,145 confirmed visitors",
     metrics: [
-      { value: "SAR 78,286", label: "Ad investment" },
-      { value: "20,000", label: "Registration goal" },
-      { value: "SAR 0.22", label: "Overall CPR" },
-      { value: "SAR 0.48", label: "GCC CPR" },
+      { value: "SAR 98,670.83", label: "Ad investment (Meta + X)" },
+      { value: "58.6M", label: "Impressions" },
+      { value: "538,655", label: "Link clicks" },
+      { value: "9,145", label: "Organizer-confirmed visitors" },
     ],
     ar: {
       client: "معرض الشرق الأوسط للدواجن (MEP Expo)",
@@ -152,13 +159,14 @@ export const clients: Client[] = [
       challenge: "جذب زوار مؤهّلين على نطاق واسع.",
       strategy: "اكتساب بالأداء مدعوم بالمحتوى وإعادة الاستهداف.",
       execution: "حملات اكتساب متعددة القنوات ونظام محتوى إبداعي وتتبّع التحويلات.",
-      outcome: "اكتساب متعدد القنوات وفق بيانات الحملات المؤكدة لسبتمبر 2026.",
-      highlight: "هدف 20,000 تسجيل · تكلفة التسجيل 0.22 ر.س",
+      outcome: "اكتساب متعدد القنوات على Meta وX؛ وأكّد المنظِّم الحضور النهائي بـ 9,145 زائرًا (نتيجة للفعالية وليست تحويلًا منسوبًا للمنصة).",
+      period: "سبتمبر – أكتوبر 2026",
+      highlight: "98,670.83 ر.س إنفاق · 9,145 زائرًا مؤكدًا",
       metrics: [
-        { value: "78,286 ر.س", label: "الإنفاق الإعلاني" },
-        { value: "20,000", label: "هدف التسجيلات" },
-        { value: "0.22 ر.س", label: "تكلفة التسجيل (إجمالي)" },
-        { value: "0.48 ر.س", label: "تكلفة التسجيل (الخليج)" },
+        { value: "98,670.83 ر.س", label: "الإنفاق الإعلاني (Meta + X)" },
+        { value: "58.6 مليون", label: "الظهور" },
+        { value: "538,655", label: "النقرات على الرابط" },
+        { value: "9,145", label: "زوار مؤكَّدون من المنظِّم" },
       ],
     },
   },
@@ -166,10 +174,11 @@ export const clients: Client[] = [
     slug: "code-it",
     client: "Code It (CODE IT)",
     category: "B2B Technology · Lead Generation",
+    period: "September 2026",
     challenge: "Generate qualified pipeline across POS and accounting solutions for three sectors.",
     strategy: "Multi-platform performance engine with CRM automation and lead-quality hardening.",
     execution: "Snapchat, Meta, Google and TikTok campaigns wired into MiniCRM and SAVOXX via 18 Zapier workflows.",
-    outcome: "Confirmed September 2026 performance across four platforms.",
+    outcome: "Confirmed September 2026 performance across four platforms. Cost per lead is a blended figure that includes an awareness campaign.",
     channels: ["Snapchat", "Meta", "Google", "MiniCRM"],
     highlight: "285 leads · 155.91 SAR / lead",
     metrics: [
@@ -180,11 +189,12 @@ export const clients: Client[] = [
     ],
     ar: {
       client: "كود إت (CODE IT)",
+      period: "سبتمبر 2026",
       category: "تقنية B2B · توليد العملاء",
       challenge: "توليد مسار عملاء مؤهّل لحلول نقاط البيع والمحاسبة في ثلاثة قطاعات.",
       strategy: "محرك أداء متعدد المنصات مع أتمتة إدارة العملاء وتقوية جودة الليدز.",
       execution: "حملات Snapchat وMeta وGoogle وTikTok مربوطة بـMiniCRM وSAVOXX عبر 18 مسار Zapier.",
-      outcome: "أداء مؤكد لسبتمبر 2026 عبر أربع منصات.",
+      outcome: "أداء مؤكد لسبتمبر 2026 عبر أربع منصات. تكلفة الليد رقم مجمّع يشمل حملة وعي.",
       highlight: "285 ليدًا · 155.91 ر.س/ليد",
       metrics: [
         { value: "44,435 ر.س", label: "الإنفاق" },
@@ -216,6 +226,7 @@ export const clients: Client[] = [
     slug: "almabani-mostadam",
     client: "Almabani / Mostadam",
     category: "Real Estate · Communications",
+    period: "2026",
     challenge: "Support communication objectives linked to Mostadam.",
     strategy: "Digital campaign plus targeted communication.",
     execution: "Campaign planning, creative and channel activation.",
@@ -223,6 +234,7 @@ export const clients: Client[] = [
     channels: ["Meta", "Google"],
     ar: {
       client: "المباني / مستدام",
+      period: "2026",
       category: "العقار · الاتصال",
       challenge: "دعم أهداف الاتصال المرتبطة بمستدام.",
       strategy: "حملة رقمية مع تواصل موجّه.",
@@ -234,6 +246,7 @@ export const clients: Client[] = [
     slug: "deem-real-estate",
     client: "Deem Real Estate",
     category: "Real Estate · Campaigns",
+    period: "2026",
     challenge: "Strengthen demand and campaign performance.",
     strategy: "Performance marketing with funnel and creative optimization.",
     execution: "Paid media execution and measurement.",
@@ -241,6 +254,7 @@ export const clients: Client[] = [
     channels: ["Meta", "Google", "Snapchat"],
     ar: {
       client: "ديم العقارية",
+      period: "2026",
       category: "العقار · الحملات",
       challenge: "تقوية الطلب وأداء الحملات.",
       strategy: "تسويق بالأداء مع تحسين المسار والمحتوى الإبداعي.",

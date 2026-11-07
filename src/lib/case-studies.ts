@@ -67,6 +67,7 @@ export const caseStudiesDetailed: CaseStudyDetail[] = [
     ],
     en: {
       industry: "Recruitment · Services",
+      period: "2026",
       heroResult: "+45% Sales Growth",
       summary: "Performance marketing activity contributed to a 45% increase in sales.",
       services: ["Performance Marketing", "Meta Ads", "Growth"],
@@ -108,6 +109,7 @@ export const caseStudiesDetailed: CaseStudyDetail[] = [
     },
     ar: {
       industry: "الاستقدام · الخدمات",
+      period: "2026",
       heroResult: "+45% نمو في المبيعات",
       summary: "أسهم نشاط التسويق بالأداء في زيادة المبيعات بنسبة 45%.",
       services: ["التسويق بالأداء", "إعلانات Meta", "النمو"],
@@ -267,6 +269,7 @@ export const caseStudiesDetailed: CaseStudyDetail[] = [
     ],
     en: {
       industry: "Real Estate",
+      period: "2026",
       heroResult: "10.38M+ Total Impressions",
       summary:
         "A multi-platform awareness campaign for Durrat Al Janadriyah around the Cityscape period, reaching a largely new audience.",
@@ -304,6 +307,7 @@ export const caseStudiesDetailed: CaseStudyDetail[] = [
     },
     ar: {
       industry: "العقار",
+      period: "2026",
       heroResult: "10.38 مليون+ ظهور إجمالي",
       summary: "حملة وعي متعددة المنصات لمشروع درة الجنادرية حول فترة سيتي سكيب، وصلت إلى جمهور جديد بنسبة كبيرة.",
       services: ["تخطيط إعلامي", "حملات متعددة المنصات", "بناء الوعي"],

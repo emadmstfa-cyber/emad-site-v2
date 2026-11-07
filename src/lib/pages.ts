@@ -77,7 +77,7 @@ export const aboutPage: Record<"en" | "ar", PageCopy> = {
       {
         h: "Selected results, with their limits",
         ul: [
-          "Saed Recruitment: +45% sales within three months of launch; 2,407 messaging conversations at an average SAR 22.76 each.",
+          "Saed Recruitment (2026): +45% sales within three months of launch; 2,407 messaging conversations at an average SAR 22.76 each.",
           "Dr. Salwa Althaqafi (TikTok lead generation, 26 July – 3 October 2026): 400 conversions at SAR 22.72 each.",
           "Code It (September 2026): 285 leads across four platforms at SAR 155.91 per lead, including an awareness campaign run by management decision.",
         ],
@@ -362,7 +362,7 @@ export const articles: Article[] = [
         {
           h: "Separate conversations from sales",
           p: [
-            "In the Saed Recruitment case, messaging campaigns produced 2,407 conversations at an average SAR 22.76 each, and sales rose 45% within three months of launch. The conversation count is a leading indicator; the sales figure is the business result. They are reported separately, and the campaign contributed to the second without being the only cause.",
+            "In the Saed Recruitment case (2026), messaging campaigns produced 2,407 conversations at an average SAR 22.76 each, and sales rose 45% within three months of launch. The conversation count is a leading indicator; the sales figure is the business result. They are reported separately, and the campaign contributed to the second without being the only cause.",
           ],
         },
         {
@@ -406,7 +406,7 @@ export const articles: Article[] = [
         {
           h: "افصل المحادثات عن المبيعات",
           p: [
-            "في حالة ساعد للاستقدام، حققت حملات المراسلة 2,407 محادثة بمتوسط 22.76 ر.س للمحادثة، وارتفعت المبيعات 45% خلال ثلاثة أشهر من الإطلاق. عدد المحادثات مؤشر مبكر، والمبيعات هي النتيجة التجارية. يُعرضان منفصلين، وقد أسهمت الحملة في الثانية دون أن تكون سببها الوحيد.",
+            "في حالة ساعد للاستقدام (2026)، حققت حملات المراسلة 2,407 محادثة بمتوسط 22.76 ر.س للمحادثة، وارتفعت المبيعات 45% خلال ثلاثة أشهر من الإطلاق. عدد المحادثات مؤشر مبكر، والمبيعات هي النتيجة التجارية. يُعرضان منفصلين، وقد أسهمت الحملة في الثانية دون أن تكون سببها الوحيد.",
           ],
         },
         {
@@ -521,7 +521,7 @@ export const articles: Article[] = [
         {
           h: "A real example, with its limits",
           p: [
-            "In the CODE IT campaign (September 2026), total spend across Snapchat, Meta, Google and TikTok was SAR 44,435 for 285 leads, or SAR 155.91 per lead. Leads flow into MiniCRM and SAVOXX through automated workflows, and the lead form was hardened with phone-number OTP verification, which deliberately reduces lead volume.",
+            "In the Code It campaign (September 2026), total spend across Snapchat, Meta, Google and TikTok was SAR 44,435 for 285 leads, or SAR 155.91 per lead. Leads flow into MiniCRM and SAVOXX through automated workflows, and the lead form was hardened with phone-number OTP verification, which deliberately reduces lead volume.",
           ],
           callout:
             "SAR 155.91 is total spend divided by leads. It includes an awareness campaign run by management decision, so it is a blended figure, not the cost of a sales-qualified lead or of a customer. Closing the sale is the sales team's responsibility.",
@@ -561,7 +561,7 @@ export const articles: Article[] = [
         {
           h: "مثال حقيقي مع حدوده",
           p: [
-            "في حملة كود إت (سبتمبر 2026) بلغ إجمالي الإنفاق عبر Snapchat وMeta وGoogle وTikTok 44,435 ر.س مقابل 285 ليدًا، أي 155.91 ر.س لكل ليد. تتدفق الليدز إلى MiniCRM وSAVOXX عبر مسارات آلية، وشُدِّد نموذج الليد بتحقق OTP من رقم الجوال، وهو ما يقلل عدد الليدز عمدًا.",
+            "في حملة كود إت — Code It (سبتمبر 2026) بلغ إجمالي الإنفاق عبر Snapchat وMeta وGoogle وTikTok 44,435 ر.س مقابل 285 ليدًا، أي 155.91 ر.س لكل ليد. تتدفق الليدز إلى MiniCRM وSAVOXX عبر مسارات آلية، وشُدِّد نموذج الليد بتحقق OTP من رقم الجوال، وهو ما يقلل عدد الليدز عمدًا.",
           ],
           callout:
             "الرقم 155.91 ر.س هو إجمالي الإنفاق مقسومًا على عدد الليدز. ويشمل حملة وعي بقرار من الإدارة، فهو رقم مجمّع وليس تكلفة ليد مؤهل مبيعيًا ولا تكلفة عميل. وإقفال البيع مسؤولية فريق المبيعات.",
