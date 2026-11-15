@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Inter } from "next/font/google";
 import type { ReactNode } from "react";
+import { Analytics } from "@/components/analytics";
 import { siteConfig } from "@/lib/site";
 import "../globals.css";
 
@@ -79,6 +80,7 @@ export default function EnLayout({ children }: { children: ReactNode }) {
           Skip to content
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
