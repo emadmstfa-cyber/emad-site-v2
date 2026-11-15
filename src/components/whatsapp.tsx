@@ -1,6 +1,7 @@
 "use client";
 
 import type { ReactNode } from "react";
+import { trackEvent } from "@/lib/analytics";
 
 export function waHref(number: string, message: string): string {
   return "https://wa.me/" + number + "?text=" + encodeURIComponent(message);
@@ -13,10 +14,9 @@ export function trackWhatsApp(location: string, caseStudy?: string): void {
     source_page: path,
     language: path.startsWith("/ar") ? "ar" : "en",
     case_study: caseStudy ?? "",
-    CTA_location: location,
+    cta_location: location,
   };
-  const w = window as unknown as { gtag?: (...args: unknown[]) => void };
-  if (typeof w.gtag === "function") w.gtag("event", "whatsapp_click", props);
+  trackEvent("whatsapp_click", props);
   window.dispatchEvent(new CustomEvent("whatsapp_click", { detail: props }));
 }
 
