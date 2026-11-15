@@ -29,8 +29,8 @@ export function HomePage({ lang }: { lang: Lang }) {
       <main id="main-content" className="flex-1">
         <Hero dict={dict} name={name} legalName={legalName} handle={siteConfig.handle} socials={socials} />
         <AnswerBlock lang={lang} />
-        <Expertise dict={dict} />
         <FeaturedWork dict={dict} studies={caseStudiesDetailed} />
+        <Expertise dict={dict} />
         <MoreWork dict={dict} clients={moreWork} />
         <MarketPilot dict={dict} />
         <Stack dict={dict} />

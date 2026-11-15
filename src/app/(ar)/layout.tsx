@@ -1,6 +1,7 @@
 import type { Metadata, Viewport } from "next";
 import { Geist_Mono, Inter, Tajawal } from "next/font/google";
 import type { ReactNode } from "react";
+import { Analytics } from "@/components/analytics";
 import { dicts } from "@/lib/i18n";
 import { siteConfig } from "@/lib/site";
 import "../globals.css";
@@ -75,6 +76,7 @@ export default function ArLayout({ children }: { children: ReactNode }) {
           تخطَّ إلى المحتوى
         </a>
         {children}
+        <Analytics />
       </body>
     </html>
   );
