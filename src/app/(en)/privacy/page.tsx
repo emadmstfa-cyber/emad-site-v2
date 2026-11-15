@@ -14,6 +14,10 @@ export const metadata: Metadata = {
 
 const sections = [
   {
+    title: "Website analytics",
+    body: "emadmstfa.com uses Google Analytics 4 to measure page views, time spent on the site, traffic sources and actions such as opening a case study or clicking WhatsApp or a phone link. Google Analytics may use cookies and process browser, device and approximate location information. Custom events do not include your name, phone number, email address or WhatsApp message. Advertising personalization and Google signals are disabled. A click indicates intent to contact us, not a completed conversation or a sale. You may block analytics through your browser settings or an analytics blocker.",
+  },
+  {
     title: "Information we access",
     body: "When you authorize Emad Search Console Reporting, the application uses Google's read-only Search Console permission to access the Search Console properties available to your Google account and their performance data, such as clicks, impressions, dates, queries, pages, countries, and devices. The application cannot edit your Search Console properties or data.",
   },
@@ -62,7 +66,7 @@ export default function PrivacyPage() {
         <article className="shell max-w-4xl">
           <span className="chip"><span className="dot" /> Privacy</span>
           <h1 className="mt-6 text-4xl font-semibold tracking-tight text-cream md:text-5xl">Privacy Policy</h1>
-          <p className="mt-4 text-sm text-muted">Effective date: October 5, 2026</p>
+          <p className="mt-4 text-sm text-muted">Updated: November 15, 2026</p>
           <p className="mt-8 max-w-3xl text-base leading-8 text-cream/85">
             This policy explains how {siteConfig.legalName} handles information through emadmstfa.com and the Emad Search Console Reporting application.
           </p>
