@@ -1,6 +1,8 @@
 import Image from "next/image";
 import { CountUp, Reveal, RotatingText } from "@/components/reveal";
 import type { Dict } from "@/lib/i18n";
+import { WhatsAppCTA } from "@/components/whatsapp";
+import { siteConfig } from "@/lib/site";
 
 const overlayStyle = {
   background: "linear-gradient(to top, rgba(20,17,15,0.97) 0%, rgba(20,17,15,0.78) 42%, rgba(20,17,15,0) 100%)",
@@ -48,8 +50,8 @@ export function Hero({ dict, name, legalName, handle, socials }: {
 
           <Reveal delay={0.25}>
             <div className="mt-9 flex flex-wrap items-center gap-3">
-              <a href="#work" className="btn btn-primary">{dict.hero.work}</a>
-              <a href="#contact" className="btn btn-ghost">{dict.hero.talk}</a>
+              <WhatsAppCTA number={siteConfig.whatsapp.number} message={dict.whatsapp.message} label={dict.hero.talk} location="hero" />
+              <a href="#work" className="btn btn-ghost">{dict.hero.work}</a>
             </div>
           </Reveal>
 
