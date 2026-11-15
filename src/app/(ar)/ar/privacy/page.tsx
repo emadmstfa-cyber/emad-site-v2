@@ -13,6 +13,10 @@ export const metadata: Metadata = {
 
 const sections = [
   {
+    title: "قياس استخدام الموقع",
+    body: "يستخدم emadmstfa.com أداة Google Analytics 4 لقياس مشاهدات الصفحات ووقت التفاعل ومصادر الزيارات وإجراءات مثل فتح دراسة حالة أو الضغط على واتساب أو الاتصال. قد تستخدم الأداة ملفات تعريف الارتباط وتعالج معلومات المتصفح والجهاز والموقع الجغرافي التقريبي. لا تتضمن الأحداث المخصصة اسمك أو رقم هاتفك أو بريدك أو نص رسالة واتساب. تخصيص الإعلانات وإشارات Google معطّلان. تعني ضغطة التواصل وجود نية للتواصل، ولا تعني اكتمال محادثة أو عملية بيع. يمكنك حجب التحليلات من إعدادات المتصفح أو باستخدام أداة لحجب التتبع.",
+  },
+  {
     title: "المعلومات التي نصل إليها",
     body: "عند تفويض تطبيق Emad Search Console Reporting، يستخدم التطبيق صلاحية القراءة فقط في Google Search Console للوصول إلى المواقع المتاحة لحسابك وبيانات أدائها، مثل النقرات ومرات الظهور والتواريخ وعبارات البحث والصفحات والدول والأجهزة. لا يستطيع التطبيق تعديل مواقع Search Console أو بياناتها.",
   },
@@ -61,7 +65,7 @@ export default function ArabicPrivacyPage() {
         <article className="shell max-w-4xl">
           <span className="chip"><span className="dot" /> الخصوصية</span>
           <h1 className="mt-6 text-4xl font-semibold tracking-tight text-cream md:text-5xl">سياسة الخصوصية</h1>
-          <p className="mt-4 text-sm text-muted">تاريخ النفاذ: 5 أكتوبر 2026</p>
+          <p className="mt-4 text-sm text-muted">آخر تحديث: 15 نوفمبر 2026</p>
           <p className="mt-8 max-w-3xl text-base leading-8 text-cream/85">
             توضّح هذه السياسة كيفية تعامل عماد عبدالله المصطفى مع المعلومات من خلال موقع emadmstfa.com وتطبيق Emad Search Console Reporting.
           </p>
